@@ -19,7 +19,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 COPY package*.json ./
-RUN npm install --omit=dev && npm cache clean --force
+RUN npm install --production && npm cache clean --force
 
 COPY prisma ./prisma/
 COPY --from=builder /app/dist ./dist
