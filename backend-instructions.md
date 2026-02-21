@@ -25,7 +25,7 @@ Required variables for the backend:
 
 ```env
 # App
-PORT=5000
+PORT=3000
 FRONTEND_URL=http://localhost:5173 # Update to Vercel URL in production
 
 # Database (Supabase Connection String)
@@ -130,7 +130,7 @@ async function bootstrap() {
     credentials: true, // REQUIRED for cookies
   });
 
-  await app.listen(process.env.PORT || 5000);
+  await app.listen(process.env.PORT || 3000);
 }
 ```
 

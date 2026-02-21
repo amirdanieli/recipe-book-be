@@ -13,10 +13,4 @@ module.exports = defineConfig({
     provider: 'postgresql',
     url: env('DATABASE_URL'),
   },
-  client: {
-    adapter: {
-      provider: 'postgresql',
-      url: env('DATABASE_URL'),
-    },
-  },
 });

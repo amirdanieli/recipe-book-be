@@ -8,7 +8,7 @@ import {
   ValidateNested,
   IsEnum,
 } from 'class-validator';
-import { Type } from 'class-transformer';
+import { Type, Transform } from 'class-transformer';
 import { Difficulty } from '@prisma/client';
 
 export class IngredientDto {
@@ -16,6 +16,11 @@ export class IngredientDto {
   @IsNotEmpty()
   name: string;
 
+  @Transform(({ value }: { value: unknown }): string => {
+    if (typeof value === 'string') return value;
+    if (typeof value === 'number') return value.toString();
+    return String(value);
+  })
   @IsString()
   @IsNotEmpty()
   quantity: string;
@@ -38,6 +43,11 @@ export class CreateRecipeDto {
   @IsNotEmpty()
   categoryId: string;
 
+  @Transform(({ value }: { value: unknown }): string => {
+    if (!value) return '';
+    const str = typeof value === 'string' ? value : String(value);
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  })
   @IsEnum(Difficulty)
   @IsNotEmpty()
   difficulty: Difficulty;

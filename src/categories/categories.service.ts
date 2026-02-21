@@ -38,6 +38,16 @@ export class CategoriesService {
       where: {
         OR: [{ id: idOrSlug }, { slug: idOrSlug }],
       },
+      include: {
+        recipes: {
+          include: {
+            createdBy: {
+              select: { id: true, name: true },
+            },
+          },
+          orderBy: { createdAt: 'desc' },
+        },
+      },
     });
 
     if (!category) {

@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  BadRequestException,
+} from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateRecipeDto } from './dto/create-recipe.dto';
 import { UpdateRecipeDto } from './dto/update-recipe.dto';
@@ -12,6 +16,32 @@ export class RecipesService {
     createRecipeDto: CreateRecipeDto,
     userId: string,
   ): Promise<Recipe> {
+    if (!userId) {
+      throw new BadRequestException('User ID is missing. Please authenticate.');
+    }
+
+    // Verify user exists before creating recipe
+    const userExists = await this.prisma.user.findUnique({
+      where: { id: userId },
+    });
+
+    if (!userExists) {
+      throw new BadRequestException(
+        'User not found. Please re-authenticate and try again.',
+      );
+    }
+
+    // Verify category exists
+    const categoryExists = await this.prisma.category.findUnique({
+      where: { id: createRecipeDto.categoryId },
+    });
+
+    if (!categoryExists) {
+      throw new BadRequestException(
+        `Category with ID ${createRecipeDto.categoryId} not found.`,
+      );
+    }
+
     const slug = this.generateSlug(createRecipeDto.title);
     const { ingredients, categoryId, ...rest } = createRecipeDto;
 
@@ -37,7 +67,9 @@ export class RecipesService {
 
   findAll(category?: string): Promise<Recipe[]> {
     const where: Prisma.RecipeWhereInput = category
-      ? { categoryId: category }
+      ? {
+          OR: [{ categoryId: category }, { category: { slug: category } }],
+        }
       : {};
     return this.prisma.recipe.findMany({
       where,
