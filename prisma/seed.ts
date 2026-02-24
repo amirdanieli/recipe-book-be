@@ -2,8 +2,7 @@ import { PrismaClient, Role, Difficulty } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import * as bcrypt from 'bcrypt';
 import * as dotenv from 'dotenv';
-import * as fs from 'fs';
-import * as path from 'path';
+import { RECIPES, RecipeEntry } from './data/recipes';
 
 dotenv.config();
 
@@ -20,15 +19,6 @@ interface Ingredient {
   name: string;
   quantity: number | string | null;
   unit: string | null;
-}
-
-interface RecipeEntry {
-  id: string;
-  name: string;
-  ingredients: string;
-  instructions: string;
-  type: string;
-  story: string;
 }
 
 const HEBREW_TO_LATIN: [RegExp, string][] = [
@@ -194,11 +184,8 @@ async function main() {
     console.log(`Created category: ${cat.name} (${cat.slug})`);
   }
 
-  // 4. Read recipes.json
-  const recipesPath = path.join(__dirname, 'data', 'recipes.json');
-  const recipesRaw = fs.readFileSync(recipesPath, 'utf-8');
-  const recipesData = JSON.parse(recipesRaw) as Record<string, RecipeEntry>;
-  const recipes = Object.values(recipesData);
+  // 4. Load recipe data
+  const recipes: RecipeEntry[] = RECIPES;
 
   // Track used slugs to avoid collisions
   const usedSlugs = new Map<string, number>();
