@@ -32,35 +32,36 @@ async function main() {
   console.log('Seed started...');
   await prisma.$connect();
 
-  // 1. Cleanup existing data (order matters)
-  await prisma.recipe.deleteMany();
-  await prisma.category.deleteMany();
-  await prisma.user.deleteMany();
-
-  // 2. Create Admin User
+  // 1. Upsert Admin User
   const adminPassword = await bcrypt.hash('Foodies1!', 10);
-  const admin = await prisma.user.create({
-    data: {
+  const admin = await prisma.user.upsert({
+    where: { email: 'danielis@recipes.com' },
+    update: {},
+    create: {
       email: 'danielis@recipes.com',
       password: adminPassword,
       name: 'Danieli',
       role: Role.ADMIN,
     },
   });
-  console.log(`Created admin user: ${admin.name} (${admin.email})`);
+  console.log(`Upserted admin user: ${admin.name} (${admin.email})`);
 
-  // 3. Create Categories
+  // 2. Upsert Categories
   const categoryMap = new Map<string, string>(); // Hebrew name -> id
   for (const cat of CATEGORY_DATA) {
-    const created = await prisma.category.create({ data: cat });
+    const created = await prisma.category.upsert({
+      where: { slug: cat.slug },
+      update: {},
+      create: cat,
+    });
     categoryMap.set(cat.name, created.id);
-    console.log(`Created category: ${cat.name} (${cat.slug})`);
+    console.log(`Upserted category: ${cat.name} (${cat.slug})`);
   }
 
-  // 4. Load recipe data
+  // 3. Load recipe data
   const recipes: RecipeEntry[] = RECIPES;
 
-  // 5. Create Recipes
+  // 4. Upsert Recipes
   for (const entry of recipes) {
     const categoryId = categoryMap.get(entry.type);
     if (!categoryId) {
@@ -70,8 +71,10 @@ async function main() {
       continue;
     }
 
-    const created = await prisma.recipe.create({
-      data: {
+    const created = await prisma.recipe.upsert({
+      where: { slug: entry.slug },
+      update: {},
+      create: {
         title: entry.title,
         slug: entry.slug,
         description: entry.description,
@@ -88,7 +91,7 @@ async function main() {
         createdById: admin.id,
       },
     });
-    console.log(`Created recipe: ${created.title} (${created.slug})`);
+    console.log(`Upserted recipe: ${created.title} (${created.slug})`);
   }
 
   console.log('Seed completed successfully.');
