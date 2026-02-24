@@ -6,17 +6,34 @@ export interface Ingredient {
 
 export interface RecipeEntry {
   id: string;
-  name: string;
+  title: string;
+  slug: string;
+  description: string | null;
+  type: string;
+  difficulty: 'Easy' | 'Medium' | 'Hard';
+  prepTimeMinutes: number;
+  prepTimeNote: string | null;
+  cookTimeMinutes: number;
+  servings: number;
+  story: string | null;
   ingredients: Ingredient[];
   steps: string[];
-  type: string;
-  story: string;
+  imageUrl: string | null;
 }
 
 export const RECIPES: RecipeEntry[] = [
   {
     id: '6ed7cf09-8078-4485-a532-e845d02741a1',
-    name: `מרק עדשים עם איטריות`,
+    title: `מרק עדשים עם איטריות`,
+    slug: 'mrk-idshim-im-aitrivt',
+    description: `מרק מחמם ליום חורף קר`,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: `מרק מחמם ליום חורף קר`,
     ingredients: [
       { name: `עדשים אדומות`, quantity: 250, unit: 'gram' },
       { name: `מרגרינה/חמאה`, quantity: 30, unit: 'gram' },
@@ -34,12 +51,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוספים את אבקת המרק, המלח, הפלפל, הכמון ויתרת המים או המרק ומביאים לרתיחה. מבשלים על להבה נמוכה כ- 40 דקות.`,
       `מוספים את האטריות ומבשלים 15 דקות. טועמים ומשפרים תיבול ומגישים חם.`
     ],
-    type: `מרקים`,
-    story: `מרק מחמם ליום חורף קר`,
+    imageUrl: null,
   },
   {
     id: 'e454b947-f40b-4fe7-978b-af07176c56ab',
-    name: `מרק עדשים עם ירקות שורש`,
+    title: `מרק עדשים עם ירקות שורש`,
+    slug: 'mrk-idshim-im-irkvt-shvrsh',
+    description: `מרק נהדר לחורף`,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: `מרק נהדר לחורף`,
     ingredients: [
       { name: `שמן`, quantity: null, unit: 'tbsp' },
       { name: `בצלים`, quantity: 2, unit: null },
@@ -59,12 +84,20 @@ export const RECIPES: RecipeEntry[] = [
       `כאשר הכל מתרכך, מורידים מהאש ומערבבים הכל בבלנדר.`,
       `להגשה, מוסיפים את הפטרוזיליה הקצוצה.`
     ],
-    type: `מרקים`,
-    story: `מרק נהדר לחורף`,
+    imageUrl: null,
   },
   {
     id: 'c9bb8a89-0c64-41ec-bda2-8eaf0edc27dc',
-    name: `מרק עדשים וחלב קוקוס`,
+    title: `מרק עדשים וחלב קוקוס`,
+    slug: 'mrk-idshim-vhlv-kvkvs',
+    description: `טעם של אסיה`,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: `טעם של אסיה`,
     ingredients: [
       { name: `מרגרינה`, quantity: 2, unit: 'tbsp' },
       { name: `זנגביל טרי מגורר`, quantity: 1, unit: 'tbsp' },
@@ -89,12 +122,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוספים את העדשים והאורז, ובחושים עד שהם מתערבבים היטב עם הירקותץ מוספים את הציר (או המים) ומביאים לרתיחה. מנמיכים את עוצמת הלהבה, מכסים את הסיר ומבשלים על סף הרתיחה 30 דקות, עד שהירקות והאורז מתרככים. מעבדים את המרק למחית בבלנדר עד לקבלת מרקם חלק לחלוטין.`,
       `מחזירים את המרק לסיר, מביאים שוב לרתיחה ומוספים את חלב הקוקוס ומיץ הלימונית, תוך בחישה. מבשלים דקה נוספת ומגישים !`
     ],
-    type: `מרקים`,
-    story: `טעם של אסיה`,
+    imageUrl: null,
   },
   {
     id: '4ed3e2ed-5c19-4b93-997e-b364ca26b594',
-    name: `סלט גזר ופקאנים`,
+    title: `סלט גזר ופקאנים`,
+    slug: 'slt-gzr-vfkanim',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `גזרים גדולים קלופים ומגוררים במעבד מזון או בפומפייה דקה.`, quantity: 6, unit: null },
       { name: `שבבי פקאן סיני , כ- 50 גר'.`, quantity: null, unit: null },
@@ -110,12 +151,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים פקאנים מסוכרים מעל לפני ההגשה.`,
       `מוסיפים את הרוטב ומערבבים. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'c1513595-aa7a-43c7-b3f8-de3539ff3ba2',
-    name: `סלט גזר ושקדים מסוכרים`,
+    title: `סלט גזר ושקדים מסוכרים`,
+    slug: 'slt-gzr-vshkdim-msvkrim',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `גזרים גדולים קלופים ומגוררים במעבד מזון או בפומפייה גסה.`, quantity: 6, unit: null },
       { name: `גדושה חרדל גרגירים דיז'ון`, quantity: 1, unit: 'tsp' },
@@ -136,12 +185,20 @@ export const RECIPES: RecipeEntry[] = [
       `מעבירים לצלחת שטוחה כדי שיוכלו להתקרר ומוסיפים לסלט לפני ההגשה.`,
       `מוסיפים את הרוטב ומערבבים. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '205919b9-d942-4723-8353-cd67286096eb',
-    name: `סלט כרוב וצנוברים`,
+    title: `סלט כרוב וצנוברים`,
+    slug: 'slt-krvv-vtsnvvrim',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `חצי ראש כרוב לבן גדול חתוך דק או ראש כרוב לבן קטן.`, quantity: null, unit: null },
       { name: `בצל ירוק עפ"י טעם אישי חתוך לפרוסות של 4 ס"מ.`, quantity: null, unit: null },
@@ -159,12 +216,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים את הצנוברים, הפקאנים והשומשום לפני ההגשה.`,
       `מוסיפים את הרוטב ומערבבים. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '0d811195-f1eb-473c-ad74-c59c4d194c13',
-    name: `סלט כרוב, פקאנים וחמוציות`,
+    title: `סלט כרוב, פקאנים וחמוציות`,
+    slug: 'slt-krvv-fkanim-vhmvtsivt',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `כרוב לבן חתוך לרצועות דקות`, quantity: '1/2', unit: 'head' },
       { name: `בצלים סגולים קטנים חצויים ופרוסים דק`, quantity: 2, unit: null },
@@ -185,12 +250,20 @@ export const RECIPES: RecipeEntry[] = [
       `מעבירים את הסלט לקערת הגשה, לפני ההגשה יוצקים את הרוטב ומערבבים, מפזרים מעל את יתרת הפקאנים והחמוציות.`,
       `מוסיפים את הרוטב ומערבבים. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'dbaab990-c02d-49b7-a2ea-446846038ab7',
-    name: `סלט כרוב ונבטים`,
+    title: `סלט כרוב ונבטים`,
+    slug: 'slt-krvv-vnvtim',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `חצי ראש כרוב לבן גדול חתוך דק או ראש כרוב לבן קטן.`, quantity: null, unit: null },
       { name: `חצי סלסלת נבטים סינים.`, quantity: null, unit: null },
@@ -204,12 +277,20 @@ export const RECIPES: RecipeEntry[] = [
       `שמים את כלל הירקות בקערה גדולה.`,
       `מתבלים עם שמן זית, מיץ לימון מלח ופלפל עפ"י טעם אישי.`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '346aa4bf-4928-4b5a-b528-297236688768',
-    name: `סלט חסה ברוטב פרג`,
+    title: `סלט חסה ברוטב פרג`,
+    slug: 'slt-hsh-vrvtv-frg',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `חסה`, quantity: null, unit: 'head' },
       { name: `פלפל אדום חתוך לרצועות`, quantity: 1, unit: null },
@@ -230,12 +311,20 @@ export const RECIPES: RecipeEntry[] = [
       `בקערה גדולה שמים את כלל הירקות ומתבלים ברוטב.`,
       `מוסיפים את הרוטב ומערבבים. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'dfb4deaa-b888-4f54-85d3-d7d23595c6b8',
-    name: `סלט חסה ורימונים`,
+    title: `סלט חסה ורימונים`,
+    slug: 'slt-hsh-vrimvnim',
+    description: `סלט שאהוב על אמיר`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `סלט שאהוב על אמיר`,
     ingredients: [
       { name: `חסה`, quantity: null, unit: 'head' },
       { name: `פטרוזיליה קצוצה`, quantity: '1/2', unit: 'package' },
@@ -250,12 +339,22 @@ export const RECIPES: RecipeEntry[] = [
       `מתבלים עם שמן זית, מיץ לימון מלח ופלפל עפ"י טעם אישי.`,
       `לפני הגשה, מוסיפים שבבי שקדים + צנוברים.`
     ],
-    type: `סלטים`,
-    story: `סלט שאהוב על אמיר`,
+    imageUrl: null,
   },
   {
     id: '16293360-f457-4187-8993-194bd3bca6bd',
-    name: `סלט חסה ותפוחי עץ`,
+    title: `סלט חסה ותפוחי עץ`,
+    slug: 'slt-hsh-vtfvhi-its',
+    description: `הסלט שאהוב על דור
+המתכון הגיע משכנה של לילך, בראש העין, כשלילך גרה בשכירות בבית של בני גנץ.`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `הסלט שאהוב על דור
+המתכון הגיע משכנה של לילך, בראש העין, כשלילך גרה בשכירות בבית של בני גנץ.`,
     ingredients: [
       { name: `חסה`, quantity: null, unit: 'head' },
       { name: `תפוח עץ לבישול (ירוק)`, quantity: 2, unit: null },
@@ -277,13 +376,20 @@ export const RECIPES: RecipeEntry[] = [
       `לפני ההגשה, להוסיף את הרוטב, הצימוקים והקשיו.`,
       `מוסיפים את הרוטב ומערבבים. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: `הסלט שאהוב על דור
-המתכון הגיע משכנה של לילך, בראש העין, כשלילך גרה בשכירות בבית של בני גנץ.`,
+    imageUrl: null,
   },
   {
     id: 'f924f9d9-eb0d-43be-a52c-64897d30d808',
-    name: `סלט חסה וירקות שורש`,
+    title: `סלט חסה וירקות שורש`,
+    slug: 'slt-hsh-virkvt-shvrsh',
+    description: `הסלט שכולם אוהבים`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `הסלט שכולם אוהבים`,
     ingredients: [
       { name: `חסה`, quantity: null, unit: 'head' },
       { name: `גזרים בינונים פרוסים דק`, quantity: 2, unit: null },
@@ -302,12 +408,20 @@ export const RECIPES: RecipeEntry[] = [
       `משרים את כלל הירקות מלבד החסה ברוטב למינימום חצי שעה.`,
       `לפני ההגשה, מוסיפים את החסה והפקאן.`
     ],
-    type: `סלטים`,
-    story: `הסלט שכולם אוהבים`,
+    imageUrl: null,
   },
   {
     id: 'aff9acb0-6c08-463e-9ace-c27137fd4cad',
-    name: `סלט חסה, פטריות ונבטים`,
+    title: `סלט חסה, פטריות ונבטים`,
+    slug: 'slt-hsh-ftrivt-vnvtim',
+    description: `מתכון שקיבלתי מעינת קופל, חברתי מתקופת השהות בלונדון.`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `מתכון שקיבלתי מעינת קופל, חברתי מתקופת השהות בלונדון.`,
     ingredients: [
       { name: `חסה`, quantity: null, unit: 'head' },
       { name: `רוקט`, quantity: null, unit: 'bunch' },
@@ -329,12 +443,20 @@ export const RECIPES: RecipeEntry[] = [
       `לפני ההגשה, מוסיפים את הרוטב והפקאן.`,
       `מוסיפים את הרוטב ומערבבים. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: `מתכון שקיבלתי מעינת קופל, חברתי מתקופת השהות בלונדון.`,
+    imageUrl: null,
   },
   {
     id: 'c3b2c2ae-85a0-4eef-a732-5644b865d36f',
-    name: `סלט שורשים`,
+    title: `סלט שורשים`,
+    slug: 'slt-shvrshim',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `קולורבי קלוף`, quantity: 1, unit: null },
       { name: `גזרים קלופים`, quantity: 2, unit: null },
@@ -354,12 +476,22 @@ export const RECIPES: RecipeEntry[] = [
       `מזלפים את הרוטב על הירקות החתוכים ומערבבים.(מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`,
       `ממש לפני ההגשה מפזרים מעל שומשום בנדיבות ומגישים.`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'eb2bfc51-6699-4c68-be40-29dc968c8d22',
-    name: `סלט סלרי`,
+    title: `סלט סלרי`,
+    slug: 'slt-slri',
+    description: `סלט שהמצאתי בהשראת סלט שאכלתי באירוע.
+הרוטב לקוח מתוך הספר "ביסים". זהו הרוטב של סלט הגזר והשקדים.`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `סלט שהמצאתי בהשראת סלט שאכלתי באירוע.
+הרוטב לקוח מתוך הספר "ביסים". זהו הרוטב של סלט הגזר והשקדים.`,
     ingredients: [
       { name: `סלרי עלים טרי ובשרני חתוך לפרוסות דקות`, quantity: null, unit: 'package' },
       { name: `תפוחי עץ חתוכים לקוביות`, quantity: 2, unit: null },
@@ -379,13 +511,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את כלל מרכיבי הסלט.`,
       `לפני ההגשה מוסיפים את הרוטב. (מומלץ לשים את כמות הרוטב עפ"י טעם אישי.)`
     ],
-    type: `סלטים`,
-    story: `סלט שהמצאתי בהשראת סלט שאכלתי באירוע.
-הרוטב לקוח מתוך הספר "ביסים". זהו הרוטב של סלט הגזר והשקדים.`,
+    imageUrl: null,
   },
   {
     id: 'b353e81d-35f5-4335-8d67-2dc20e4685c7',
-    name: `סלט עשבים וחמוציות`,
+    title: `סלט עשבים וחמוציות`,
+    slug: 'slt-ishvim-vhmvtsivt',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `פטרוזיליה קצוצה`, quantity: 1, unit: 'package' },
       { name: `כוסברה קצוצה`, quantity: '1/2', unit: 'package' },
@@ -401,12 +540,22 @@ export const RECIPES: RecipeEntry[] = [
       `מתבלים עם שמן זית, מיץ לימון מלח ופלפל עפ"י טעם אישי.`,
       `מומלץ להוסיף שקדים קלויים/ אגוזי מלך קלויים/ צנוברים קלויים.`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '45323de9-423e-42ba-bca5-ca3634fe0179',
-    name: `סלט קולרבי ומלפפון`,
+    title: `סלט קולרבי ומלפפון`,
+    slug: 'slt-kvlrvi-vmlffvn',
+    description: `את הסלט הזה מכינה ללא הגבינה.
+לקוח מאחד מספריה של לייזה פאנלים`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `את הסלט הזה מכינה ללא הגבינה.
+לקוח מאחד מספריה של לייזה פאנלים`,
     ingredients: [
       { name: `מלפפונים`, quantity: 2, unit: null },
       { name: `קולרבי קלוף`, quantity: 1, unit: null },
@@ -423,13 +572,20 @@ export const RECIPES: RecipeEntry[] = [
       `נערבב בקערה עם הרוקט, עשבי התיבול, מיץ הלימון, שמן הזית מלח והפלפל.`,
       `לפני ההגשה נוסיף את אגוזי המלך והגבינה. (לא חובה!)`
     ],
-    type: `סלטים`,
-    story: `את הסלט הזה מכינה ללא הגבינה.
-לקוח מאחד מספריה של לייזה פאנלים`,
+    imageUrl: null,
   },
   {
     id: 'e999cb7c-5016-4607-95f6-b80587fb6ee4',
-    name: `סלט יווני`,
+    title: `סלט יווני`,
+    slug: 'slt-ivvni',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `מלפפונים`, quantity: 2, unit: null },
       { name: `עגבניות`, quantity: 2, unit: null },
@@ -447,12 +603,20 @@ export const RECIPES: RecipeEntry[] = [
       `נערבב עם שמן זית, מלח ופלפל טחון.`,
       `לפני ההגשה נוסיף את הגבינה.`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '0ea42498-ddd9-40b8-a9e7-b703854da86e',
-    name: `סלט קפרזה`,
+    title: `סלט קפרזה`,
+    slug: 'slt-kfrzh',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `עגבניות שרי אדומות חתוכות לחצאים`, quantity: null, unit: null },
       { name: `עלי בזיליקום`, quantity: null, unit: null },
@@ -466,12 +630,20 @@ export const RECIPES: RecipeEntry[] = [
       `מעל העגבניות נסדר את גבינת המוצרלה ועלי הביזליקום.`,
       `נטבל מעל בשמן זית, מלח ופלפל.`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '58971c71-06e9-4a51-951b-ccffa0744016',
-    name: `סלט ירקות עם צפתית וצנוברים`,
+    title: `סלט ירקות עם צפתית וצנוברים`,
+    slug: 'slt-irkvt-im-tsftit-vtsnvvrim',
+    description: `לקוח מתוך הספר "בישולה" של שולה מודן`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `לקוח מתוך הספר "בישולה" של שולה מודן`,
     ingredients: [
       { name: `מלפפונים`, quantity: null, unit: null },
       { name: `עגבניות`, quantity: 3, unit: null },
@@ -498,12 +670,20 @@ export const RECIPES: RecipeEntry[] = [
       `את הגרעינים אפשר לטגן או לקלות ולהוסיף ברגע האחרון.`,
       `לפני ההגשה, מחממים במחבת מעט שמן זית ומטגנים את הגרעינים. מוסיפים לסלט, ומערבבים. נותנים לסועדים להתמוגג מהריח ומגישים.`
     ],
-    type: `סלטים`,
-    story: `לקוח מתוך הספר "בישולה" של שולה מודן`,
+    imageUrl: null,
   },
   {
     id: 'e0b37669-1eab-4d7a-a3c5-9651e7cfef78',
-    name: `סלט חסה ובוטנים`,
+    title: `סלט חסה ובוטנים`,
+    slug: 'slt-hsh-vvvtnim',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `תפוחי "גראנד"`, quantity: 2, unit: null },
       { name: `מלפפון`, quantity: 1, unit: null },
@@ -524,12 +704,20 @@ export const RECIPES: RecipeEntry[] = [
       `קולפים את הגזר, ואז קוטפים ממנו "תלתלים" בעזרת קולפן. קורעים את החסה ומצרים את כל הירקות לסלט.`,
       `דקה לפני ההגשה יוצקים על הסלט את הרוטב, ובוזקים עליו את הבוטנים.`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'a8863dd0-a800-4e3e-ba2f-5e76fcfb9777',
-    name: `סלט עגבניות שרי`,
+    title: `סלט עגבניות שרי`,
+    slug: 'slt-igvnivt-shri',
+    description: `ואריציה לסלט של אלון שעמית אוהבת`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `ואריציה לסלט של אלון שעמית אוהבת`,
     ingredients: [
       { name: `בצלים סגולים`, quantity: 2, unit: null },
       { name: `עלי מרווה`, quantity: '5-6', unit: null },
@@ -551,12 +739,20 @@ export const RECIPES: RecipeEntry[] = [
       `שמים את העגבניות בקערה, מוסיפים שמן זית, מלח ופלפל ומערבבים.`,
       `מוסיפים את הבצלים, עלי הבזיליקום, מערבבים ומפזרים מעל שבבי פרמז'ן.`
     ],
-    type: `סלטים`,
-    story: `ואריציה לסלט של אלון שעמית אוהבת`,
+    imageUrl: null,
   },
   {
     id: 'b11a866b-3a11-431f-965a-e7c7aa72680b',
-    name: `סלט חיטה`,
+    title: `סלט חיטה`,
+    slug: 'slt-hith',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `חיטה מבושלת ומסוננת.`, quantity: '1/2', unit: 'kg' },
       { name: `בצל ירוק`, quantity: 2, unit: 'bunch' },
@@ -572,12 +768,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את שאר מרכיבי הסלט.`,
       `מוסיפים את הרוטב.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'c3da0241-dca2-4ed1-8732-11eecc17ebf2',
-    name: `סלט קישואים וזיתים`,
+    title: `סלט קישואים וזיתים`,
+    slug: 'slt-kishvaim-vzitim',
+    description: null,
+    type: `ירקות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `בצל`, quantity: 1, unit: null },
       { name: `שום`, quantity: 3, unit: 'clove' },
@@ -599,12 +803,20 @@ export const RECIPES: RecipeEntry[] = [
       `מכסים ומבשלים במסך 25 דקות על אש בינונית עד שהקישואים יתרככו.`,
       `מצננים ומגישים קר או חם. אפשר לעטר בפטרוזיליה קצוצה וזיתים.`
     ],
-    type: `ירקות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '963aa367-83a2-4362-b98b-e2dbfff9db90',
-    name: `סלט תפו"א ומיונז`,
+    title: `סלט תפו"א ומיונז`,
+    slug: 'slt-tfv-a-vmivnz',
+    description: `סלט שהיווה ארוחת צהרים בבית אמא ואבא בערב פסח.`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `סלט שהיווה ארוחת צהרים בבית אמא ואבא בערב פסח.`,
     ingredients: [
       { name: `תפוחי אדמה מבושלים עם הקליפה.`, quantity: 5, unit: null },
       { name: `של אפונה וגזר`, quantity: null, unit: 'can' },
@@ -619,12 +831,22 @@ export const RECIPES: RecipeEntry[] = [
       `להוסיף את המיונז, החרדל, מלח והפלפל, לערבב ולטעום. ניתן לשפר לפי הטעם.`,
       `לחתוך את הביצים לקוביות ולהוסיף. (לשים לב להוסיף את הביצים בסוף על מנת שלא יתפוררו בערבוב. )`
     ],
-    type: `סלטים`,
-    story: `סלט שהיווה ארוחת צהרים בבית אמא ואבא בערב פסח.`,
+    imageUrl: null,
   },
   {
     id: '1dc730a5-cbb3-47cd-a391-9fa5a1f4032a',
-    name: `קציצות כרישה`,
+    title: `קציצות כרישה`,
+    slug: 'ktsitsvt-krishh',
+    description: `קציצות הכרישה הכי טעימות בעולם של סבתא תרי! 
+מתכון שמככב במשפחה בכל פסח.`,
+    type: `ירקות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: `קציצות הכרישה הכי טעימות בעולם של סבתא תרי! 
+מתכון שמככב במשפחה בכל פסח.`,
     ingredients: [
       { name: `כרישה`, quantity: 5, unit: null },
       { name: `בצלים גדולים`, quantity: 3, unit: null },
@@ -645,13 +867,20 @@ export const RECIPES: RecipeEntry[] = [
       `להכין רוטב עם בצל מטוגן, רסק עגבניות קטן, 3/4 כוס מים, 3/4 כוס קטשופ, כף חומץ, 1/4 כוס סוכר, מלח ופלפל.`,
       `להניח את הקציצות ברוטב, לבשל על אש נמוכה כ-1/4 שעה.`
     ],
-    type: `ירקות`,
-    story: `קציצות הכרישה הכי טעימות בעולם של סבתא תרי! 
-מתכון שמככב במשפחה בכל פסח.`,
+    imageUrl: null,
   },
   {
     id: '9202208a-6943-4b28-8720-6c3fbceed08f',
-    name: `שעועית ירוקה`,
+    title: `שעועית ירוקה`,
+    slug: 'shiviit-irvkh',
+    description: `מתכון של ניר רוסו`,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `מתכון של ניר רוסו`,
     ingredients: [
       { name: `שעועית ירוקה קפואה`, quantity: 400, unit: 'gram' },
       { name: `שמן`, quantity: 3, unit: 'tbsp' },
@@ -663,12 +892,20 @@ export const RECIPES: RecipeEntry[] = [
       `שמים את השעועית בסיר, יוצקים עליה את כל שאר החומרים, מכסים ומבשלים על אש בנונית במשך 20 דק'.`,
       `מסירים את המכסה ומבשלים 10 דקות נוספות, או עד שהרוטב יסמיך אך לא ייחרך.`
     ],
-    type: `תוספות`,
-    story: `מתכון של ניר רוסו`,
+    imageUrl: null,
   },
   {
     id: 'bcba6d47-0286-4e1c-800b-a23e8a2ff9f6',
-    name: `אורז פרסי ירוק של חיים כהן `,
+    title: `אורז פרסי ירוק של חיים כהן `,
+    slug: 'avrz-frsi-irvk-shl-hiim-khn',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `גדולים שמיר`, quantity: 2, unit: 'bunch' },
       { name: `אורז פרסי מסוג "יסמין"`, quantity: 3, unit: 'cup' },
@@ -687,12 +924,20 @@ export const RECIPES: RecipeEntry[] = [
       `יוצקים את השמן הנותר לסיר ומחממים. מוסיפים את הכמון, מלח ופלפל. מוסיפים בזהירות כוס מים, מנענעים את הסיר כדי לערבב את הזמן והמים ומכבים את האש. מעבירים 2/3 מהנוזל לכלי אחר ומניחים בצד.`,
       `מסדרים בתחתית הסיר את תפוחי האדמה, מוסיפים את השמיר לאורז ומערבבים. מניחים את האורז על תפוחי האדמה בלי להדק אותו ומפזרים אותו באופן שווה בתוך הסיר. נועצים ידית של כף עץ באורז במספר מקומות כדי ליצור "ארובות" לאדים. מניחים את הסיר על להבה בינונית, מכסים וממתינים כ-7 דקות, עד שעולים אדים מהסיר. יוצקים לסיר את שארית השמן ומכסים במגבת ובמיכסה. מניחים מתחת לסיר רשת מתכת, ומבשלים על להבה נמוכה כשעה.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '3ac0f6ff-14ae-4738-a95a-1c18350ecc53',
-    name: `אורז פרסי של נירה רוסו `,
+    title: `אורז פרסי של נירה רוסו `,
+    slug: 'avrz-frsi-shl-nirh-rvsv',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `וחצי כוסות אורז`, quantity: 2, unit: null },
       { name: `תפוחי אדמה צרים וארוכים`, quantity: 3, unit: null },
@@ -712,12 +957,20 @@ export const RECIPES: RecipeEntry[] = [
       `מרתיחים 2/3 כוס מים + רבע חבילת מרגרינה ויוצקים מעל האורז המתבשל. מכסים ומבשלים כ-30 דקות נוספות על אש קטנה. אסור לפתוח את הסיר!`,
       `לפני ההגשה הופכים את תוכן הסיר כאשר הירקות יהיו למעלה.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '35e75b56-35e7-4430-8e97-c19604ee5b89',
-    name: `אורז עם עלי גפן של לייזה פאנלים `,
+    title: `אורז עם עלי גפן של לייזה פאנלים `,
+    slug: 'avrz-im-ili-gfn-shl-liizh-fanlim',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `אורז פרסי`, quantity: 3, unit: 'cup' },
       { name: `שמן`, quantity: '1/4', unit: 'cup' },
@@ -738,12 +991,20 @@ export const RECIPES: RecipeEntry[] = [
       `נחמם במחבת את השמן ונטגן את הבצל, הצנוברים והפיסטוקים עד להזהבה. נוסיף את החומציות, הסוכר, מיץ הלימון, קינמון, מוסקט, רכז רימונים, מלח ופלפל. נוסיף את עלי הגפן ונמשיך לטגן קלות 3 דקות עד שהם מתרככים.`,
       `נערבב את התערובת ביחד עם האורז הפרסי.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'f4c01495-1e2e-45ff-8c88-bacf36196354',
-    name: `תפו"א בשקית קוקי`,
+    title: `תפו"א בשקית קוקי`,
+    slug: 'tfv-a-vshkit-kvki',
+    description: `מתכון של מיכל מנור , כמדומני במקור של בני סיידא`,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `מתכון של מיכל מנור , כמדומני במקור של בני סיידא`,
     ingredients: [
       { name: `תפו"א`, quantity: 6, unit: null },
       { name: `פלפל אדום`, quantity: 1, unit: null },
@@ -760,12 +1021,20 @@ export const RECIPES: RecipeEntry[] = [
       `בקערה שמים את הבטטה חתוכה לקוביות, פלפל אדום חתוך לקוביות, בצל חתוך דק, פטרוזיליה קצוצה ואת כלל המרכיבים.`,
       `מכניסים הכל אל תוך שקית קוקי, מכניסים לתנור למשך שעה.`
     ],
-    type: `תוספות`,
-    story: `מתכון של מיכל מנור , כמדומני במקור של בני סיידא`,
+    imageUrl: null,
   },
   {
     id: 'ff084f03-ac83-4607-8134-00f09897be68',
-    name: `קווץ' פוטטו`,
+    title: `קווץ' פוטטו`,
+    slug: 'kvvts-fvttv',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `תפוחי אדמה מזן דזריה האדום, שטופים ולא קלופים`, quantity: 8, unit: null },
       { name: `מלח גס ופלפל שחור גרוס`, quantity: null, unit: null },
@@ -781,12 +1050,20 @@ export const RECIPES: RecipeEntry[] = [
       `נתבל בחמאה או בשמן הזית, במלח ופלפל ובתימין. נשים שן שום במרכז של כל תפוח אדמה.`,
       `נאפה 20 דקות או עד להזהבה. נגיש חם.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'f7d52267-bad0-42d6-9ae1-eb9e31f38177',
-    name: `צ'יפס בתנור`,
+    title: `צ'יפס בתנור`,
+    slug: 'ts-ifs-vtnvr',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `תפוחי אדמה שלמים בקליפתם`, quantity: 6, unit: null },
       { name: `שמן קנולה`, quantity: '1/2', unit: 'cup' },
@@ -805,12 +1082,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים שמן עם קורנפלור ותבלינים. מערבבים עם תפוחי האדמה ומסדרים בתבנית מרופדת בנייר אפייה יחד עם רוזמרין לבישום.`,
       `אופים 15 דקות, הופכים צד ואופים עוד 15 דקות, מגישים חם.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '5f7274fd-a10e-46fc-bf0c-762bdeec82ef',
-    name: `תפו"א אדום בתנור`,
+    title: `תפו"א אדום בתנור`,
+    slug: 'tfv-a-advm-vtnvr',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `תפוחי אדמה מזן דזירה האדום, שוטפים ולא קלופים`, quantity: 8, unit: null },
       { name: `מלח לבישול`, quantity: null, unit: null },
@@ -830,12 +1115,20 @@ export const RECIPES: RecipeEntry[] = [
       `נפזר את תפוחי האדמה בתבנית ונפזר מעל את הפטרוזיליה.`,
       `נאפה כשעה עד שתפוחי האדמה מזהיבים יפה.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '48c30b72-4aa3-4e4a-b49d-459ca3032cf2',
-    name: `תפו"א ובצל בתנור`,
+    title: `תפו"א ובצל בתנור`,
+    slug: 'tfv-a-vvtsl-vtnvr',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `תפוחי אדמה אדומים, כמה שיותר קטנים`, quantity: '8-10', unit: null },
       { name: `בצלים לבנים, כמה שיותר קטנים`, quantity: 4, unit: null },
@@ -853,12 +1146,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים עם כף עץ, ומכניסים לתנור ל-10 דקות נוספות.`,
       `מערביים שוב עם כף, זה בסדר עם מתפרק קצת, ומכניסים לתנור ל-10 דקות נוספות. בשלב הזה תפוחי האדמה צריכים להיות זהובים ומוכנים. אם לא, פשוט מערבבים ומכניסים לתנור לעוד 10 דקות.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '9d7fc116-ea20-4dbf-b690-aa1fd54012e1',
-    name: `בורגול עם בטטה `,
+    title: `בורגול עם בטטה `,
+    slug: 'vvrgvl-im-vtth',
+    description: `וריאציה של מתכון המקלובה (ללא עוף) של סלמה ממאסטר שף.`,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `וריאציה של מתכון המקלובה (ללא עוף) של סלמה ממאסטר שף.`,
     ingredients: [
       { name: `חצי בטטה, קלופה וחתוכה לעגולים בעובי של 1 ס"מ`, quantity: null, unit: null },
       { name: `שמן צמחי לטיגון`, quantity: null, unit: null },
@@ -879,12 +1180,22 @@ export const RECIPES: RecipeEntry[] = [
       `מסדרים את הבטטה בתחתית הסיר, מעל זה שמים את תערובת הבורגול עם התבלינים. מוסיפים את ציר העוף, סוגרים את הסיר ומבשלים 20 דקות על אש קטנה.`,
       `אחרי שמקלובה מוכנה, הופכים את הסיר בצלחת הגשה, מקשטים מלמעלה עם פטרוזיליה ושקדים.`
     ],
-    type: `תוספות`,
-    story: `וריאציה של מתכון המקלובה (ללא עוף) של סלמה ממאסטר שף.`,
+    imageUrl: null,
   },
   {
     id: '40cf83b0-73c9-413d-a029-b22ca1878f95',
-    name: `קובה של סבתא`,
+    title: `קובה של סבתא`,
+    slug: 'kvvh-shl-svta',
+    description: `קובה עיראקית, אבא אכל כל שבת אצל סבתא רבתא שהעבירה את המתכון לסבתא איידה. פעם אחת בלונדון אבא החליט שהוא חייב לאכול קובה. התקשר לסבתא והיא הכתיבה לו את המתכון, כמובן מהזיכרון. 
+השאר היסטוריה.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `קובה עיראקית, אבא אכל כל שבת אצל סבתא רבתא שהעבירה את המתכון לסבתא איידה. פעם אחת בלונדון אבא החליט שהוא חייב לאכול קובה. התקשר לסבתא והיא הכתיבה לו את המתכון, כמובן מהזיכרון. 
+השאר היסטוריה.`,
     ingredients: [
       { name: `שמן`, quantity: null, unit: null },
       { name: `בצלים`, quantity: '2-3', unit: null },
@@ -922,13 +1233,20 @@ export const RECIPES: RecipeEntry[] = [
       `לבדוק כל כמה שעות אם צריך להוסיף קצת מים רתוחים (לתקוע מזלג לקרקעית בכמה מקומות)`,
       `סבתא היתה מוסיפה למעלה גם חתיכות דלעת לטעם`
     ],
-    type: `עיקריות`,
-    story: `קובה עיראקית, אבא אכל כל שבת אצל סבתא רבתא שהעבירה את המתכון לסבתא איידה. פעם אחת בלונדון אבא החליט שהוא חייב לאכול קובה. התקשר לסבתא והיא הכתיבה לו את המתכון, כמובן מהזיכרון. 
-השאר היסטוריה.`,
+    imageUrl: null,
   },
   {
     id: '4fabff0c-7bc5-4771-9d30-82d59893b0fe',
-    name: `תביט`,
+    title: `תביט`,
+    slug: 'tvit',
+    description: `חמין עיראקי מסורתי, היה מאכל קבוע כל שבת עוד בעיראק וכמובן בארץ. טוב לארוחות חגיגיות. כדאי לעשות כמות כפולה לשני סירים`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `חמין עיראקי מסורתי, היה מאכל קבוע כל שבת עוד בעיראק וכמובן בארץ. טוב לארוחות חגיגיות. כדאי לעשות כמות כפולה לשני סירים`,
     ingredients: [
       { name: `עור שלם של עוף גדול (אפשר לבקש מקצבים להוריד אותו עבורכם. נדרש למצוא קצב טוב כדי שלא יקרע)`, quantity: null, unit: null },
       { name: `- 500 גר' בשר בקר חתוך לקוביות קטנות יחסית (2-3 ס"מ)`, quantity: 400, unit: null },
@@ -961,12 +1279,20 @@ export const RECIPES: RecipeEntry[] = [
       `לבדוק אם נדרשים מים. להוסיף מים חמים. אם מוסיפים מים אפשר להוסיף גם קצת מלח.`,
       `מינימום 8 - 10 שעות.`
     ],
-    type: `עיקריות`,
-    story: `חמין עיראקי מסורתי, היה מאכל קבוע כל שבת עוד בעיראק וכמובן בארץ. טוב לארוחות חגיגיות. כדאי לעשות כמות כפולה לשני סירים`,
+    imageUrl: null,
   },
   {
     id: '8946c03b-0edb-48bf-8a48-41b942d38644',
-    name: `עוגת גזר`,
+    title: `עוגת גזר`,
+    slug: 'ivgt-gzr',
+    description: null,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: null,
     ingredients: [
       { name: `סוכר`, quantity: 1, unit: 'cup' },
       { name: `שמן`, quantity: '3/4', unit: 'cup' },
@@ -988,12 +1314,20 @@ export const RECIPES: RecipeEntry[] = [
       `לשים הכל בתבנית אינגליש קייק`,
       `לתנור למשך 45-60 דקות`
     ],
-    type: `עוגות ועוגיות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'cd0b3ed3-8b00-47e1-a1f4-4238546e8037',
-    name: `עוגת "גלית"`,
+    title: `עוגת "גלית"`,
+    slug: 'ivgt-glit',
+    description: `את המתכון הזה קיבלתי מגלית שעבדה אתי בפרופלוס בשנות התשעים. לימים הפך ל "עוגת הקפה שלי" עד שהבנתי שהילדים לא ממש אוהבים "עוגות לקפה".`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `את המתכון הזה קיבלתי מגלית שעבדה אתי בפרופלוס בשנות התשעים. לימים הפך ל "עוגת הקפה שלי" עד שהבנתי שהילדים לא ממש אוהבים "עוגות לקפה".`,
     ingredients: [
       { name: `חמאה 200 גר'`, quantity: 1, unit: null },
       { name: `סוכר לבן`, quantity: 1, unit: 'cup' },
@@ -1012,12 +1346,20 @@ export const RECIPES: RecipeEntry[] = [
       `שמים באינגליש קייק - 3/4 מהמלית, שכבת אגוזים, יתר המלית ועוד שכבת אגוזים`,
       `<strong>לא צוין מעלות וזמן אפיה</strong>`
     ],
-    type: `עוגות ועוגיות`,
-    story: `את המתכון הזה קיבלתי מגלית שעבדה אתי בפרופלוס בשנות התשעים. לימים הפך ל "עוגת הקפה שלי" עד שהבנתי שהילדים לא ממש אוהבים "עוגות לקפה".`,
+    imageUrl: null,
   },
   {
     id: 'd669004d-0746-4770-ad75-7525aeccf462',
-    name: `פאי גבינה`,
+    title: `פאי גבינה`,
+    slug: 'fai-gvinh',
+    description: null,
+    type: `אפייה מלוחה`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: null,
     ingredients: [
       { name: `בצק:`, quantity: null, unit: null },
       { name: `קמח תופח`, quantity: 2, unit: 'cup' },
@@ -1042,12 +1384,20 @@ export const RECIPES: RecipeEntry[] = [
       `מורחים את הבצק בביצה טרופה ומפזרים את השומשום.`,
       `אופים בתנור בחום בינוני כ-35 דקות`
     ],
-    type: `אפייה מלוחה`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '8614af2b-933c-4758-a9e7-72fc219d59d5',
-    name: `עוגיות גרנולה`,
+    title: `עוגיות גרנולה`,
+    slug: 'ivgivt-grnvlh',
+    description: `וריאציה (מופחתת סוכר) למתכון של קרין גורן`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `וריאציה (מופחתת סוכר) למתכון של קרין גורן`,
     ingredients: [
       { name: `חמאה רכה`, quantity: 250, unit: 'gram' },
       { name: `סוכר (חצי כוס)`, quantity: 100, unit: 'gram' },
@@ -1069,12 +1419,20 @@ export const RECIPES: RecipeEntry[] = [
       `יוצרים כדורים במשקל של כ- 25 גר', בעזרת כף או עם ידיים רטובות, מניחים ומשטחים מעט כל עוגיה באופן מרווח על תבנית מרופדת בנייר אפייה.`,
       `אופים 15-18 דקות עד שהעוגיות משתטחות מעט ומזהיבות. העוגיות מוכנות כשהן יציבות בשוליים ועדיין רכות ובהירות במרכז.`
     ],
-    type: `עוגות ועוגיות`,
-    story: `וריאציה (מופחתת סוכר) למתכון של קרין גורן`,
+    imageUrl: null,
   },
   {
     id: 'b97bdfa8-8441-44bf-af14-48e780e5fa77',
-    name: `מרק אספרגוס`,
+    title: `מרק אספרגוס`,
+    slug: 'mrk-asfrgvs',
+    description: null,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `חמאה/מרגרינה`, quantity: 6, unit: 'tbsp' },
       { name: `בצלים גדולים קצוצים דק`, quantity: 4, unit: null },
@@ -1096,12 +1454,20 @@ export const RECIPES: RecipeEntry[] = [
       `להוסיף קצת שמנת אם רוצים.`,
       `אפשר לטחון חלק מהמרק כדי שיהיה יותר סמיך`
     ],
-    type: `מרקים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '1463cf62-0bc3-4e4e-85e8-f6944c136772',
-    name: `ביס בוטנים`,
+    title: `ביס בוטנים`,
+    slug: 'vis-vvtnim',
+    description: null,
+    type: `קינוחים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `שכבת חמאת בוטנים:`, quantity: null, unit: null },
       { name: `שוקולד לבן`, quantity: 250, unit: 'gram' },
@@ -1121,12 +1487,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים את פצפוצי האורז ומערבבים היטב. יוצקים מעל השכבה שכבר הצטננה, מיישרים, ומכניסים למקרר ל-40 דקות.`,
       `מוציאים מהמקרר רגע לפני הגשה וחותכים יפה יפה כמו אמא`
     ],
-    type: `קינוחים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'b2efc4f2-1899-4df8-9055-3563106841d7',
-    name: `כדורי בשר של איידה`,
+    title: `כדורי בשר של איידה`,
+    slug: 'kdvri-vshr-shl-aiidh',
+    description: `מנה של סבתא איידה מאז הילדות של ארז`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מנה של סבתא איידה מאז הילדות של ארז`,
     ingredients: [
       { name: `בשר טחון`, quantity: 500, unit: 'gram' },
       { name: `בצלים קצוצים`, quantity: 2, unit: null },
@@ -1162,12 +1536,24 @@ export const RECIPES: RecipeEntry[] = [
       `אפשר לחמם לפני הגשה`,
       `להגיש עם פירה`
     ],
-    type: `עיקריות`,
-    story: `מנה של סבתא איידה מאז הילדות של ארז`,
+    imageUrl: null,
   },
   {
     id: '92e26c19-3062-46f7-8562-9f468ff18708',
-    name: `נתחי בשר, עוף ואורז סיידא`,
+    title: `נתחי בשר, עוף ואורז סיידא`,
+    slug: 'nthi-vshr-ivf-vavrz-siida',
+    description: `תבשיל קדירה בבישול איטי, מצוין כחמין לשבת או חג.
+בתקופה שהיינו בלונדון, התגעגענו לתביט של אידה. הקדירה הזאת הזכירה לנו את הטעם
+המתכון המקורי, ללא תפו"א.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `תבשיל קדירה בבישול איטי, מצוין כחמין לשבת או חג.
+בתקופה שהיינו בלונדון, התגעגענו לתביט של אידה. הקדירה הזאת הזכירה לנו את הטעם
+המתכון המקורי, ללא תפו"א.`,
     ingredients: [
       { name: `שמן`, quantity: '3/4', unit: 'cup' },
       { name: `בצלים קצוצים דק`, quantity: 2, unit: null },
@@ -1199,14 +1585,26 @@ export const RECIPES: RecipeEntry[] = [
       `אחרי 10 דקות מורידים לחום שבת של 80 מעלות עד 100 מעלות.`,
       `לבשל לפחות 10 עד 12 שעות. אפשר גם יותר.`
     ],
-    type: `עיקריות`,
-    story: `תבשיל קדירה בבישול איטי, מצוין כחמין לשבת או חג.
-בתקופה שהיינו בלונדון, התגעגענו לתביט של אידה. הקדירה הזאת הזכירה לנו את הטעם
-המתכון המקורי, ללא תפו"א.`,
+    imageUrl: null,
   },
   {
     id: '00fb3d3b-d1e1-4826-a9f3-16a8bf9c685d',
-    name: `עוף בשקית קוקי`,
+    title: `עוף בשקית קוקי`,
+    slug: 'ivf-vshkit-kvki',
+    description: `מתכון פשוט ומהיר להכנה. 15 דקות הכנה.  
+מצוין לילדים.
+המתכון בגירסתו המקורית של "סבתא לאה" מתוך הבלוג של אמהות מבשלות.
+אנחנו מוסיפים לשקית גם אפונה קפואה מופשרת.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מתכון פשוט ומהיר להכנה. 15 דקות הכנה.  
+מצוין לילדים.
+המתכון בגירסתו המקורית של "סבתא לאה" מתוך הבלוג של אמהות מבשלות.
+אנחנו מוסיפים לשקית גם אפונה קפואה מופשרת.`,
     ingredients: [
       { name: `כרעיים מחולקות`, quantity: null, unit: null },
       { name: `תפו"א מקולפים, שטופים, חתוכים לחצאים או רבעים (אם קטנים אפשר להשאיר שלם)`, quantity: '6-8', unit: null },
@@ -1227,15 +1625,20 @@ export const RECIPES: RecipeEntry[] = [
       `להוריד ל 130 מעלות לעוד שעה או לחום C°‏ 100-90 ואפשר כמה שעות ללא בעיה.`,
       `לפני הגשה, אפשר לעשות חור קטן בתחתית ולהיפתר מחלק מהנוזלים אבל להשאיר קצת.`
     ],
-    type: `עיקריות`,
-    story: `מתכון פשוט ומהיר להכנה. 15 דקות הכנה.  
-מצוין לילדים.
-המתכון בגירסתו המקורית של "סבתא לאה" מתוך הבלוג של אמהות מבשלות.
-אנחנו מוסיפים לשקית גם אפונה קפואה מופשרת.`,
+    imageUrl: null,
   },
   {
     id: '6d00b83d-c420-42a2-aada-c13278788fc9',
-    name: `שניצל צ'יפס`,
+    title: `שניצל צ'יפס`,
+    slug: 'shnitsl-ts-ifs',
+    description: `מנה קלה להכנה ואהובה על ילדים. אפשר לתת לילדים להכין את הצ'יפס.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מנה קלה להכנה ואהובה על ילדים. אפשר לתת לילדים להכין את הצ'יפס.`,
     ingredients: [
       { name: `שקית גדולה תפוצ'יפס (לפתוח במקצת ולמעוך היטב את הצ'יפס לחתיכות קטנות בתוך השקית)`, quantity: null, unit: null },
       { name: `- 15 שניצלים`, quantity: 10, unit: null },
@@ -1250,12 +1653,20 @@ export const RECIPES: RecipeEntry[] = [
       `להניח על מגש עם נייר אפיה.`,
       `לתנור לחום 160 מעלות כ 20 דקות (תלוי בעובי) - לבדוק מדי פעם.`
     ],
-    type: `עיקריות`,
-    story: `מנה קלה להכנה ואהובה על ילדים. אפשר לתת לילדים להכין את הצ'יפס.`,
+    imageUrl: null,
   },
   {
     id: '4ca07a91-387d-4a02-ab48-d8b348e4ad1f',
-    name: `מרק ירקות פיקנטי`,
+    title: `מרק ירקות פיקנטי`,
+    slug: 'mrk-irkvt-fiknti',
+    description: null,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `בצל`, quantity: 1, unit: null },
       { name: `גזרים`, quantity: 2, unit: null },
@@ -1285,12 +1696,20 @@ export const RECIPES: RecipeEntry[] = [
       `טועמים ומתקנים עפ"י טעם.`,
       `<strong>ניתן כ10 דקות לפני סוף הבישול להוסיף אטריות דקות למרק או קוואקר גס</strong>`
     ],
-    type: `מרקים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'ce5563df-6aea-4af0-8b81-a7ed29c1d339',
-    name: `מרק כתום`,
+    title: `מרק כתום`,
+    slug: 'mrk-ktvm',
+    description: null,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `דלעת חתוכה גס`, quantity: 1, unit: null },
       { name: `דלורית, חתוכה גס`, quantity: 1, unit: null },
@@ -1313,12 +1732,20 @@ export const RECIPES: RecipeEntry[] = [
       `נטחן טוב טוב (ואם נרצה נעביר גם במסננת). מתקבל מרקם כה חלק ונעים, כמו משי כתום. נטעם ונתקן תיבול.`,
       `ניתן להוסיף לפני האכילה כפית של שמנת חמוצה.`
     ],
-    type: `מרקים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '258101a1-3911-4793-989e-91a5a7db90aa',
-    name: `מרק גריסים`,
+    title: `מרק גריסים`,
+    slug: 'mrk-grisim',
+    description: null,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `+ 1/2 כוסות גריסי פנינה שטופים`, quantity: 1, unit: null },
       { name: `בצל גדול חתוך לקוביות`, quantity: 1, unit: null },
@@ -1340,12 +1767,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים את הגריסים, מרק העוף, התבלינים ומים פי 3 מגובה הירקות. מבשלים על אש בינונית, ומערבבים מדי פעם, כדי שהגריסים לא יידבקו לתחתית הסיר.`,
       `כאשר הגריסים כמעט רכים לגמרי, מוסיפים את תפוחי האדמה וממשיכים לבשל עד ריכוך. אם המרק הופך סמיך מדי אפשר להוסיף מעט מים רותחים.`
     ],
-    type: `מרקים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '3b55591f-ec54-4043-9a4e-715a6ea6edb1',
-    name: `מרק מוליגטוני`,
+    title: `מרק מוליגטוני`,
+    slug: 'mrk-mvligtvni',
+    description: null,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `מרק עוף`, quantity: 2, unit: 'liter' },
       { name: `עדשים אדומות`, quantity: 1, unit: 'cup' },
@@ -1372,12 +1807,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את המרק ואם רוצים מעבירים לריסוק במעבד מזון. כשהמרק מרוסק, יוצקים לצלחות, מוסיפים את העוף ושבבי קוקוס ומגישים עם פלחי לימון בצד.`,
       `<strong>למרקם קרמי יותר, ניתן לרסק את המרק לסנן ולהוסיף חלב קוקוס או שמנת מתוקה. מביאים לרתיחה ומשפרים תיבול עפ"י טעם</strong>`
     ],
-    type: `מרקים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '5c0e33fb-d09b-4626-9957-df3ac2debcb4',
-    name: `מרק כרישה`,
+    title: `מרק כרישה`,
+    slug: 'mrk-krishh',
+    description: null,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `גרגרי חומוס מושרים למשך הלילה`, quantity: 300, unit: 'gram' },
       { name: `תפוח אדמה בינוני, מקולף`, quantity: 1, unit: null },
@@ -1397,12 +1840,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים מהציר שנותר את הכמות הדרושה כדי להגיע למרקם הרצוי, בודקים את התיבול ומוסיפים פרמזן לפי הטעם.`,
       `<strong>מומלץ לאכול עם מעט שמן זית מעל ופרמז'ן.</strong>`
     ],
-    type: `מרקים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'ae50cdf1-4dbc-4091-a5b2-468ba6bc711b',
-    name: `מרק סלק וכדורי בשר`,
+    title: `מרק סלק וכדורי בשר`,
+    slug: 'mrk-slk-vkdvri-vshr',
+    description: null,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `שמן זית`, quantity: 2, unit: 'tbsp' },
       { name: `בצלים סגולים בינוניים`, quantity: 2, unit: null },
@@ -1431,12 +1882,20 @@ export const RECIPES: RecipeEntry[] = [
       `במעבד מזון שמים את הבצל הסגול, הכוסברה ושמן הזית וקוצצים דק. מוסיפים את התערובת לבשר הטחון, מתבלים במלח ובפלפל שחור, מוסיפים ביצים ולשים את התערובת לפיזור אחיד של המרכיבים.`,
       `בידיים משומנות, צרים קציצות קטנות בגודל כדורי פינג פונג. מוסיפים את עלי הסלרי הקצוצים ואת הקציצות למרק. מבשלים את הקציצות כ-20 דקות, עד שהן מוכנות.`
     ],
-    type: `מרקים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '18ca8ce9-6ede-4d59-a2d8-100060677609',
-    name: `אורז אדום`,
+    title: `אורז אדום`,
+    slug: 'avrz-advm',
+    description: `לייזה פאנלים`,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `לייזה פאנלים`,
     ingredients: [
       { name: `עדשים שחורות קטנות`, quantity: '1/2', unit: 'cup' },
       { name: `מלח`, quantity: '1/2', unit: 'tsp' },
@@ -1470,12 +1929,20 @@ export const RECIPES: RecipeEntry[] = [
       `נוסיף לאורז את העדשים המבושלות ו-3 כפות שמן זית ונערבב קלות. נכסה שוב את הסיר ונשאיר על הכיריים החמות – עדיין לעוד 20 דקות עד שהכל הטעמים יתאחדו.`,
       `אחרי 20 דקות נפתח ונטעם.`
     ],
-    type: `תוספות`,
-    story: `לייזה פאנלים`,
+    imageUrl: null,
   },
   {
     id: '8bdaf583-2e24-4656-b986-1bef0f898d80',
-    name: `דג חריף עם חומוס`,
+    title: `דג חריף עם חומוס`,
+    slug: 'dg-hrif-im-hvmvs',
+    description: null,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: null,
     ingredients: [
       { name: `דגי פילה אמנון שהושרו שעה לפחות במי לימון`, quantity: 4, unit: null },
       { name: `כוסברה קצוצה`, quantity: null, unit: 'package' },
@@ -1502,12 +1969,22 @@ export const RECIPES: RecipeEntry[] = [
       `מוזגים רוטב מהסיר על הדג בעזרת כף כך שהרוטב יכסה את הדג.`,
       `מוסיפים את הכוסברה שנשארה ומפזרים מעל הדגים, מנעים את הסיר ומבשלים עוד 10 דקות.`
     ],
-    type: `עיקריות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '710a215a-6f73-4e6e-8e7e-568d53dfe6cf',
-    name: `דג חריף`,
+    title: `דג חריף`,
+    slug: 'dg-hrif',
+    description: `התכון לקוח מספרה של אלינוער רבין - שמש, ים ואןכל גם.
+היום אני משתמשת בכוסברה טרייה במקום יבשה. זה לא אותו טעם אבל טעים!!`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `התכון לקוח מספרה של אלינוער רבין - שמש, ים ואןכל גם.
+היום אני משתמשת בכוסברה טרייה במקום יבשה. זה לא אותו טעם אבל טעים!!`,
     ingredients: [
       { name: `שום, פרוסות`, quantity: 4, unit: 'clove' },
       { name: `שמן לטיגון`, quantity: null, unit: null },
@@ -1525,13 +2002,22 @@ export const RECIPES: RecipeEntry[] = [
       `מגישים חם או בחום החדר.`,
       `<strong>ניתן להוסיף מים לרוטב על פי צורך.</strong>`
     ],
-    type: `עיקריות`,
-    story: `התכון לקוח מספרה של אלינוער רבין - שמש, ים ואןכל גם.
-היום אני משתמשת בכוסברה טרייה במקום יבשה. זה לא אותו טעם אבל טעים!!`,
+    imageUrl: null,
   },
   {
     id: 'c6f1bfe9-8735-4d9b-8363-5b6262c61f67',
-    name: `שווארמה`,
+    title: `שווארמה`,
+    slug: 'shvvarmh',
+    description: `המתכון של גלית לוי מלונדון, שחיפשה פתרון לאופציות הנתחים הנמכרים בחנות הכשרה.
+הבישול הבסיסי של השוקיים מתאים גם ל - chinese pancake.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `המתכון של גלית לוי מלונדון, שחיפשה פתרון לאופציות הנתחים הנמכרים בחנות הכשרה.
+הבישול הבסיסי של השוקיים מתאים גם ל - chinese pancake.`,
     ingredients: [
       { name: `שוקי הודו עם העצם`, quantity: 2, unit: null },
       { name: `בצל לבן חתוך לרצועות דקות`, quantity: 3, unit: null },
@@ -1550,13 +2036,20 @@ export const RECIPES: RecipeEntry[] = [
       `מטגנים את הבצל עד הזהבה עם מעט מלח וסוכר.`,
       `מוסיפים את הבשר וכל שאר התבלינים. (ניתן להוסיף רק תבלין שווארמה ואת כל השאר עפ"י טעם אישי)`
     ],
-    type: `עיקריות`,
-    story: `המתכון של גלית לוי מלונדון, שחיפשה פתרון לאופציות הנתחים הנמכרים בחנות הכשרה.
-הבישול הבסיסי של השוקיים מתאים גם ל - chinese pancake.`,
+    imageUrl: null,
   },
   {
     id: '11b05452-9b2e-4284-8000-0f839d876cb3',
-    name: `בצל ממולא בשר ואורז`,
+    title: `בצל ממולא בשר ואורז`,
+    slug: 'vtsl-mmvla-vshr-vavrz',
+    description: null,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: null,
     ingredients: [
       { name: `בצלים בינוניים מאורכים קלופים`, quantity: 5, unit: null },
       { name: `משמשים מיובשים`, quantity: 10, unit: null },
@@ -1587,12 +2080,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את כל חומרי הרוטב, מלבד השמן. ויוצקים על הבצלים עד כיסוי. אם צריך מוסיפים את מים או מרק. מזלפים מעל שמן זית, מכסים ברדיד אלומיניום ואוטמים היטב.`,
       `ממקמים את התבנית בתחתית התנור ואופים כשעתיים. מסירים את רדיד האלומיניום ואופים כ15 דקות עד שהרוטב מסמיך.`
     ],
-    type: `עיקריות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'ba45482f-f452-4c23-baee-cf691e5ee687',
-    name: `סלט כרוב - גדעון`,
+    title: `סלט כרוב - גדעון`,
+    slug: 'slt-krvv-gdivn',
+    description: `את הסלט הזה אכלנו אצל גדעון ויעל ברהום, אני משנה את התוספת "היבשה" אבל כל אחד יכול לפזר בסוף מה שבא לו`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `את הסלט הזה אכלנו אצל גדעון ויעל ברהום, אני משנה את התוספת "היבשה" אבל כל אחד יכול לפזר בסוף מה שבא לו`,
     ingredients: [
       { name: `כרוב לבן קטן (או חצי גדול) קצוץ`, quantity: null, unit: null },
       { name: `בצל קצוץ`, quantity: '1/2', unit: null },
@@ -1609,12 +2110,24 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את כל חומרי הרוטב היטב, עד שהסוכר נמס.`,
       `מערבבים עם הכרוב ומפזרים "טופינג" לפני ההגשה.`
     ],
-    type: `סלטים`,
-    story: `את הסלט הזה אכלנו אצל גדעון ויעל ברהום, אני משנה את התוספת "היבשה" אבל כל אחד יכול לפזר בסוף מה שבא לו`,
+    imageUrl: null,
   },
   {
     id: '2901a89e-345b-4559-b64c-7c118184e61a',
-    name: `עוף בסילאן`,
+    title: `עוף בסילאן`,
+    slug: 'ivf-vsilan',
+    description: `מתכון שכולם אוהבים.
+פורסם בזמנו במגזין "על השולחן" כאופציה לאירוח בסוכה.
+אנחנו מאמצים אותו כל השנה.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מתכון שכולם אוהבים.
+פורסם בזמנו במגזין "על השולחן" כאופציה לאירוח בסוכה.
+אנחנו מאמצים אותו כל השנה.`,
     ingredients: [
       { name: `שוקיים או ירכיים`, quantity: 1, unit: 'kg' },
       { name: `תפו"א קלופים וחתוכים לקוביות`, quantity: 1, unit: 'kg' },
@@ -1632,14 +2145,24 @@ export const RECIPES: RecipeEntry[] = [
       `לאפות שעה וחצי בחום של 200 מעלות.`,
       `מומלץ להפוך את חלקי העוף מדי חצי שעה על מנת שישחימו מכל הצדדים.`
     ],
-    type: `עיקריות`,
-    story: `מתכון שכולם אוהבים.
-פורסם בזמנו במגזין "על השולחן" כאופציה לאירוח בסוכה.
-אנחנו מאמצים אותו כל השנה.`,
+    imageUrl: null,
   },
   {
     id: 'bce56db9-69f7-418e-8e6a-dc6b8fec010e',
-    name: `עוף בקפה`,
+    title: `עוף בקפה`,
+    slug: 'ivf-vkfh',
+    description: `מתכון שכולם אוהבים, גם אלה שלא שותים קפה!!
+קל קל ומהיר.
+כל הזכויות שמורות לארנון רגב.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מתכון שכולם אוהבים, גם אלה שלא שותים קפה!!
+קל קל ומהיר.
+כל הזכויות שמורות לארנון רגב.`,
     ingredients: [
       { name: `כרעיים חצויות`, quantity: 1.5, unit: 'kg' },
       { name: `קפה  מכף של קפה נמס + מים`, quantity: 1, unit: 'cup' },
@@ -1655,14 +2178,26 @@ export const RECIPES: RecipeEntry[] = [
       `אופים שעה וחצי בחום של 200 מעלות`,
       `רצוי להפוך את חלקי העוף כל חצי שעה על מנת שישחימו מכל הצדדים.`
     ],
-    type: `עיקריות`,
-    story: `מתכון שכולם אוהבים, גם אלה שלא שותים קפה!!
-קל קל ומהיר.
-כל הזכויות שמורות לארנון רגב.`,
+    imageUrl: null,
   },
   {
     id: '01d94c89-651c-4a6a-aec5-01c0c8cd72cd',
-    name: `עוף, אורז ובטטה בתנור`,
+    title: `עוף, אורז ובטטה בתנור`,
+    slug: 'ivf-avrz-vvtth-vtnvr',
+    description: `את המנה הזאת אכלנו בביקור אצל רוחמה ואילן במושב כנף.
+נסענו לסופ"ש עם אמיר ועמית.
+שחר שבחרה להישאר בבית , נאלצה להתמודד עם פורצים...ערב שלא ישכח.
+מתכון כמעט ללא שמן.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `את המנה הזאת אכלנו בביקור אצל רוחמה ואילן במושב כנף.
+נסענו לסופ"ש עם אמיר ועמית.
+שחר שבחרה להישאר בבית , נאלצה להתמודד עם פורצים...ערב שלא ישכח.
+מתכון כמעט ללא שמן.`,
     ingredients: [
       { name: `כרעיים מחולקות`, quantity: 4, unit: null },
       { name: `בצלים סגולים פרוסים לטבעות דקות`, quantity: 3, unit: null },
@@ -1686,15 +2221,24 @@ export const RECIPES: RecipeEntry[] = [
       `מביאים לרתיחה ומעבירים לתנור לשעה.`,
       `מכבים את התנור ומשאירים את הקדירה בפנים ל- 15 דק' נוספות.`
     ],
-    type: `עיקריות`,
-    story: `את המנה הזאת אכלנו בביקור אצל רוחמה ואילן במושב כנף.
-נסענו לסופ"ש עם אמיר ועמית.
-שחר שבחרה להישאר בבית , נאלצה להתמודד עם פורצים...ערב שלא ישכח.
-מתכון כמעט ללא שמן.`,
+    imageUrl: null,
   },
   {
     id: '189aef5f-cd04-4148-8105-bdc1de3d05c1',
-    name: `עוף בעשבי תיבול`,
+    title: `עוף בעשבי תיבול`,
+    slug: 'ivf-vishvi-tivvl',
+    description: `מתכון של בני סיידא שקיבלתי ממיכל מנור. 
+אהוב על כולם.
+מומלץ להגיש עם פירה.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מתכון של בני סיידא שקיבלתי ממיכל מנור. 
+אהוב על כולם.
+מומלץ להגיש עם פירה.`,
     ingredients: [
       { name: `כרעיים`, quantity: 4, unit: null },
       { name: `שום`, quantity: 10, unit: 'clove' },
@@ -1717,14 +2261,22 @@ export const RECIPES: RecipeEntry[] = [
       `צולים את העוף כשעה וחצי עד להשחמה.`,
       `מדי חצי שעה הופכים את נתחי העוף ויוצקים עליהם מהרוטב שהצטבר בתבנית.`
     ],
-    type: `עיקריות`,
-    story: `מתכון של בני סיידא שקיבלתי ממיכל מנור. 
-אהוב על כולם.
-מומלץ להגיש עם פירה.`,
+    imageUrl: null,
   },
   {
     id: 'b0727ced-42fe-4f39-ad67-f0c0cc1247ad',
-    name: `גיבץ`,
+    title: `גיבץ`,
+    slug: 'givts',
+    description: `מתכון של לייזה פאנלים.
+אני אוהבת לחתוך את הירקות לקוביות קטנות , יש להפחית את משך הבישול בהתאם`,
+    type: `ירקות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: `מתכון של לייזה פאנלים.
+אני אוהבת לחתוך את הירקות לקוביות קטנות , יש להפחית את משך הבישול בהתאם`,
     ingredients: [
       { name: `שמן זית`, quantity: '2-4', unit: 'tbsp' },
       { name: `חציל חתוך לקוביות`, quantity: 1, unit: null },
@@ -1754,13 +2306,22 @@ export const RECIPES: RecipeEntry[] = [
       `נבשל כחצי שעה, ונתקן תיבול/סמיכות על פי הצורך.`,
       `נחמם תנור ל -C°‏160 ונכניס את הסיר, המכוסה, ל-30-45 דק'.`
     ],
-    type: `ירקות`,
-    story: `מתכון של לייזה פאנלים.
-אני אוהבת לחתוך את הירקות לקוביות קטנות , יש להפחית את משך הבישול בהתאם`,
+    imageUrl: null,
   },
   {
     id: 'b0cf45c6-ab04-4fd4-8008-b9ef798b8b37',
-    name: `גארליק נאן`,
+    title: `גארליק נאן`,
+    slug: 'garlik-nan',
+    description: `מתכון של רינת ינסמן
+המתכון מיועד למחבת, אפשר גם לאפות בטאבון בחום של 180-200 מעלות בכניסה.`,
+    type: `אפייה מלוחה`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `מתכון של רינת ינסמן
+המתכון מיועד למחבת, אפשר גם לאפות בטאבון בחום של 180-200 מעלות בכניסה.`,
     ingredients: [
       { name: `קמח מניטובה/קמח לחם`, quantity: 1, unit: 'cup' },
       { name: `קמח פיצה`, quantity: 3, unit: 'cup' },
@@ -1787,13 +2348,22 @@ export const RECIPES: RecipeEntry[] = [
       `מורחים בתערובת השמן והכוסברה ומשחימים משני הצדדים.`,
       `בועות הן סימן שהנאן מוכן`
     ],
-    type: `אפייה מלוחה`,
-    story: `מתכון של רינת ינסמן
-המתכון מיועד למחבת, אפשר גם לאפות בטאבון בחום של 180-200 מעלות בכניסה.`,
+    imageUrl: null,
   },
   {
     id: '7331afe7-7a62-481e-902e-a7d3604483a4',
-    name: `צ'אנה מסאלה - תבשיל חומוס הודי`,
+    title: `צ'אנה מסאלה - תבשיל חומוס הודי`,
+    slug: 'ts-anh-msalh-tvshil-hvmvs-hvdi',
+    description: `המתכון ממטבחה של רינת ינסמן
+רינת ממליצה לא לבשל חומוס יבש עם סודה לשתיה שאומנם מרככת אבל גם גורמת להיפרדות הקליפה.`,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `המתכון ממטבחה של רינת ינסמן
+רינת ממליצה לא לבשל חומוס יבש עם סודה לשתיה שאומנם מרככת אבל גם גורמת להיפרדות הקליפה.`,
     ingredients: [
       { name: `בצלים סגולים גדולים קצוצים`, quantity: 2, unit: null },
       { name: `ג'ינג'ר טרי`, quantity: null, unit: 'tsp' },
@@ -1822,13 +2392,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים את שארית הכוסברה והבצל הירוק.`,
       `מכבים את האש.`
     ],
-    type: `תוספות`,
-    story: `המתכון ממטבחה של רינת ינסמן
-רינת ממליצה לא לבשל חומוס יבש עם סודה לשתיה שאומנם מרככת אבל גם גורמת להיפרדות הקליפה.`,
+    imageUrl: null,
   },
   {
     id: '4cb7d5bc-e7c7-4c42-a157-73a5d06f6b00',
-    name: `צ'אטני ירוק חריף`,
+    title: `צ'אטני ירוק חריף`,
+    slug: 'ts-atni-irvk-hrif',
+    description: `רינת ינסמן`,
+    type: `רטבים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: `רינת ינסמן`,
     ingredients: [
       { name: `כוסברה`, quantity: null, unit: 'bunch' },
       { name: `נענע ללא גבעולים`, quantity: null, unit: 'bunch' },
@@ -1844,12 +2421,22 @@ export const RECIPES: RecipeEntry[] = [
       `מעבדים את כל המצרכים במעבד מזון.`,
       `להתחיל עם עשבי תיבול, שום וג'ינג'ר ואז להוסיף את השאר.`
     ],
-    type: `רטבים`,
-    story: `רינת ינסמן`,
+    imageUrl: null,
   },
   {
     id: '228e4c4a-1066-4583-93aa-c7c1de9665f2',
-    name: `פסטרמה ביתית`,
+    title: `פסטרמה ביתית`,
+    slug: 'fstrmh-vitit',
+    description: `מתוך "ספר העוף" של בני סיידא ואבי ביטון
+הכי טעים חם מהתנור`,
+    type: `שונות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: `מתוך "ספר העוף" של בני סיידא ואבי ביטון
+הכי טעים חם מהתנור`,
     ingredients: [
       { name: `נתחי חזה עוף גדולים, חצויים`, quantity: 2, unit: null },
       { name: `למרינדה:`, quantity: null, unit: null },
@@ -1881,13 +2468,24 @@ export const RECIPES: RecipeEntry[] = [
       `צולים 40 דק'.`,
       `מצננים ופורסים.`
     ],
-    type: `שונות`,
-    story: `מתוך "ספר העוף" של בני סיידא ואבי ביטון
-הכי טעים חם מהתנור`,
+    imageUrl: null,
   },
   {
     id: '38a95bff-8988-46fc-aa48-c3adfc8d8834',
-    name: `עוגת שוקולד קפואה`,
+    title: `עוגת שוקולד קפואה`,
+    slug: 'ivgt-shvkvld-kfvah',
+    description: `זוהי עוגת השוקולד של "בישולה" (שולה מודן). מכינים אותו בעיקר בקיץ אבל אין מי שלא אוהב אותו במשך כל השנה.
+לאוכלוסייה רגישה - המתכון כולל חלבונים טריים.
+אפשר להכין בתבנית מלבנית או עגולה.`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `זוהי עוגת השוקולד של "בישולה" (שולה מודן). מכינים אותו בעיקר בקיץ אבל אין מי שלא אוהב אותו במשך כל השנה.
+לאוכלוסייה רגישה - המתכון כולל חלבונים טריים.
+אפשר להכין בתבנית מלבנית או עגולה.`,
     ingredients: [
       { name: `לבסיס:`, quantity: null, unit: null },
       { name: `פתי בר`, quantity: 150, unit: 'gram' },
@@ -1914,14 +2512,22 @@ export const RECIPES: RecipeEntry[] = [
       `מורחים על העוגה ומאחסנים בהקפאה.`,
       `יש להוציא את העוגה מהמקפיא כ-5- 10 דק' לפני ההגשה.`
     ],
-    type: `עוגות ועוגיות`,
-    story: `זוהי עוגת השוקולד של "בישולה" (שולה מודן). מכינים אותו בעיקר בקיץ אבל אין מי שלא אוהב אותו במשך כל השנה.
-לאוכלוסייה רגישה - המתכון כולל חלבונים טריים.
-אפשר להכין בתבנית מלבנית או עגולה.`,
+    imageUrl: null,
   },
   {
     id: 'c213dd16-bd88-4ac7-bed0-bdb3471a0b1d',
-    name: `תבשיל בקר בבירה`,
+    title: `תבשיל בקר בבירה`,
+    slug: 'tvshil-vkr-vvirh',
+    description: `מתכון אהוב מתוך ספר הבשר של חני פרבר.
+מומלץ להגיש עם מחית תפו"א.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מתכון אהוב מתוך ספר הבשר של חני פרבר.
+מומלץ להגיש עם מחית תפו"א.`,
     ingredients: [
       { name: `בשר רזה , כגון: כתף, חתוך לקוביות של 5*5.`, quantity: 1, unit: 'kg' },
       { name: `בצלים בינוניים פרוסים דק`, quantity: 3, unit: null },
@@ -1950,13 +2556,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים מים אם יש צורך.`,
       `בתום הבישול מסירים את השומן שהצטבר על פני התבשיל ומגישים.`
     ],
-    type: `עיקריות`,
-    story: `מתכון אהוב מתוך ספר הבשר של חני פרבר.
-מומלץ להגיש עם מחית תפו"א.`,
+    imageUrl: null,
   },
   {
     id: 'd2f4c045-89f8-4ed2-9411-218efc656439',
-    name: `סלט כרוב לבן - מירה`,
+    title: `סלט כרוב לבן - מירה`,
+    slug: 'slt-krvv-lvn-mirh',
+    description: `מירה הצטרפה למשפחה ואנחנו התאהבנו בה ובאוכל שהיא מבשלת. כמה מהמתכונים שלה אומצו באהבה. הסלט הזה הוא אחד מהם.`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `מירה הצטרפה למשפחה ואנחנו התאהבנו בה ובאוכל שהיא מבשלת. כמה מהמתכונים שלה אומצו באהבה. הסלט הזה הוא אחד מהם.`,
     ingredients: [
       { name: `כרוב בינוני חתוך דק`, quantity: 1, unit: null },
       { name: `אפונה מופשרת`, quantity: '1/4', unit: 'cup' },
@@ -1977,12 +2590,20 @@ export const RECIPES: RecipeEntry[] = [
       `מסדרים למעלה את התוספות בצורה יפה`,
       `מערבבים לעיני הסועדים`
     ],
-    type: `סלטים`,
-    story: `מירה הצטרפה למשפחה ואנחנו התאהבנו בה ובאוכל שהיא מבשלת. כמה מהמתכונים שלה אומצו באהבה. הסלט הזה הוא אחד מהם.`,
+    imageUrl: null,
   },
   {
     id: 'ba2e3697-707f-4633-919b-2fee0792a0ec',
-    name: `פילה סלמון - לימור`,
+    title: `פילה סלמון - לימור`,
+    slug: 'filh-slmvn-limvr',
+    description: null,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: null,
     ingredients: [
       { name: `פילה סלמון גדול, עד 2 ק"ג`, quantity: 1, unit: null },
       { name: `לרוטב:`, quantity: null, unit: null },
@@ -2000,12 +2621,20 @@ export const RECIPES: RecipeEntry[] = [
       `אופים 15-20 דק בחום של C°‏ 210`,
       `מפזרים את האגוזים מעל ואפים 5 דק נוספות, או יותר, בהתאם לצורך`
     ],
-    type: `עיקריות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'ff7e1e48-7857-4d7a-9c95-308226ca3c19',
-    name: `סלט מלפפונים ועוף/טופו של ג'פניקה`,
+    title: `סלט מלפפונים ועוף/טופו של ג'פניקה`,
+    slug: 'slt-mlffvnim-vivf-tvfv-shl-g-fnikh',
+    description: null,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `מלפפונים חתוכים`, quantity: 500, unit: 'gram' },
       { name: `חזה עוף מבושל וקרוע לפיסות או 150 גר' טופו חתוך לקוביות קטנות`, quantity: 150, unit: 'gram' },
@@ -2024,12 +2653,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים בקערה את המלפפונים והעוף/טופו ומוסיפים בהדרגה את הרוטב עד שמגיעים לטעם שאוהבים`,
       `לפני ההגשה, מפזרים בוטנים`
     ],
-    type: `סלטים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '0f6618ed-361a-41cb-bec5-ca84d017a4d4',
-    name: `סלט סלק עשיר`,
+    title: `סלט סלק עשיר`,
+    slug: 'slt-slk-ishir',
+    description: `מתכון של אורה ארגוב, ואל תשאלו אותי מי זאת..`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `מתכון של אורה ארגוב, ואל תשאלו אותי מי זאת..`,
     ingredients: [
       { name: `גזרים מגורדים`, quantity: 3, unit: null },
       { name: `סלקים טריים מגורדים`, quantity: 3, unit: null },
@@ -2050,12 +2687,24 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את הירקות עם מרכיבי הרוטב`,
       `מפזרים אגוזים/שקדים ומגישים`
     ],
-    type: `סלטים`,
-    story: `מתכון של אורה ארגוב, ואל תשאלו אותי מי זאת..`,
+    imageUrl: null,
   },
   {
     id: '0c378cd9-cb18-42ff-80b2-54c36d0b51d7',
-    name: `קציצות עוף בתנור`,
+    title: `קציצות עוף בתנור`,
+    slug: 'ktsitsvt-ivf-vtnvr',
+    description: `את המתכון הזה מצאתי בגיליון "לאשה" משנת 2011.
+אין לי מושג מאין הגיע אלי העיתון..
+בכל מקרה, קציצות קלות להכנה, מהירות ודיאטתיות`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `את המתכון הזה מצאתי בגיליון "לאשה" משנת 2011.
+אין לי מושג מאין הגיע אלי העיתון..
+בכל מקרה, קציצות קלות להכנה, מהירות ודיאטתיות`,
     ingredients: [
       { name: `עוף טחון/שווארמה הודו`, quantity: 700, unit: 'gram' },
       { name: `גזר גדול מרוסק דק`, quantity: 1, unit: null },
@@ -2082,14 +2731,22 @@ export const RECIPES: RecipeEntry[] = [
       `משך האפייה תלוי בגודל הקציצות.`,
       `אפשר לגוון, לשנות או להוסיף ירקות אחרים, כגון, קישוא, בצל ירוק וכד'`
     ],
-    type: `עיקריות`,
-    story: `את המתכון הזה מצאתי בגיליון "לאשה" משנת 2011.
-אין לי מושג מאין הגיע אלי העיתון..
-בכל מקרה, קציצות קלות להכנה, מהירות ודיאטתיות`,
+    imageUrl: null,
   },
   {
     id: 'f998190e-a0b9-4742-b934-d441951484d7',
-    name: `פולאו בג'יג'`,
+    title: `פולאו בג'יג'`,
+    slug: 'fvlav-vg-ig',
+    description: `מתכון עיראקי של אורז אדום עם עוף, כשאת האורז מבשלים במי הבישול של העוף.
+הגירסה שלי קצת משודרגת עם תוספת בצל, צימוקים ושקדים`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מתכון עיראקי של אורז אדום עם עוף, כשאת האורז מבשלים במי הבישול של העוף.
+הגירסה שלי קצת משודרגת עם תוספת בצל, צימוקים ושקדים`,
     ingredients: [
       { name: `כרעיים`, quantity: 6, unit: null },
       { name: `אורז`, quantity: 2, unit: 'cup' },
@@ -2114,13 +2771,26 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את העוף עם תערובת הבצלים.`,
       `מגישים על האורז האדום כשהוא מוכן.`
     ],
-    type: `עיקריות`,
-    story: `מתכון עיראקי של אורז אדום עם עוף, כשאת האורז מבשלים במי הבישול של העוף.
-הגירסה שלי קצת משודרגת עם תוספת בצל, צימוקים ושקדים`,
+    imageUrl: null,
   },
   {
     id: '0d5ad732-f69a-4dfb-9180-2c24496267d4',
-    name: `ממולאים בלי למלא = האורז של שחר`,
+    title: `ממולאים בלי למלא = האורז של שחר`,
+    slug: 'mmvlaim-vli-lmla-havrz-shl-shhr',
+    description: `מתכון עתיק יומין של נירה רוסו , מעיתון הארץ, שהרעיון שלו להכין קדירה בטעם של ממולאים בלי עבודת המילוי.
+מכינים תערובת של בשר ואורז ועוטפים אותם בחתיכות פלפל או זוקיני מכל צידי הסיר. היות והילדים היו משאירים את הפלפל המבושל, שינינו גרסה והיום מכינים את הקדירה עם תפו"א, קישואים ובטטה.
+עדיין יקרא "האורז של שחר". ברור מדוע.
+חשוב להשתמש בסיר עם תחתית עבה. אפשר גם להכין בתנור.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `מתכון עתיק יומין של נירה רוסו , מעיתון הארץ, שהרעיון שלו להכין קדירה בטעם של ממולאים בלי עבודת המילוי.
+מכינים תערובת של בשר ואורז ועוטפים אותם בחתיכות פלפל או זוקיני מכל צידי הסיר. היות והילדים היו משאירים את הפלפל המבושל, שינינו גרסה והיום מכינים את הקדירה עם תפו"א, קישואים ובטטה.
+עדיין יקרא "האורז של שחר". ברור מדוע.
+חשוב להשתמש בסיר עם תחתית עבה. אפשר גם להכין בתנור.`,
     ingredients: [
       { name: `בצלים`, quantity: 2, unit: null },
       { name: `שמן זית`, quantity: '4-6', unit: 'tbsp' },
@@ -2151,15 +2821,20 @@ export const RECIPES: RecipeEntry[] = [
       `להיזהר שהתחתית לא תיחרך.`,
       `אפשר לחלופין להשתמש ב- 5 פלפלים חתוכים לריבועים של 3 ס"מ.`
     ],
-    type: `עיקריות`,
-    story: `מתכון עתיק יומין של נירה רוסו , מעיתון הארץ, שהרעיון שלו להכין קדירה בטעם של ממולאים בלי עבודת המילוי.
-מכינים תערובת של בשר ואורז ועוטפים אותם בחתיכות פלפל או זוקיני מכל צידי הסיר. היות והילדים היו משאירים את הפלפל המבושל, שינינו גרסה והיום מכינים את הקדירה עם תפו"א, קישואים ובטטה.
-עדיין יקרא "האורז של שחר". ברור מדוע.
-חשוב להשתמש בסיר עם תחתית עבה. אפשר גם להכין בתנור.`,
+    imageUrl: null,
   },
   {
     id: 'de6a0baa-34f3-4cc2-8ed5-5a8f4b624c1d',
-    name: `אורז מלא עם צנוברים בתנור`,
+    title: `אורז מלא עם צנוברים בתנור`,
+    slug: 'avrz-mla-im-tsnvvrim-vtnvr',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `בצל חתוך לקוביות`, quantity: 1, unit: null },
       { name: `אורז מלא`, quantity: 2, unit: 'cup' },
@@ -2175,12 +2850,20 @@ export const RECIPES: RecipeEntry[] = [
       `אוטמים היטב עם ניר כסף`,
       `אופים שעה וחצי בחום של 180 מעלות`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'da3b367d-0110-4505-a071-be1435b68a3c',
-    name: `תבשיל אורז נתחי עוף וירקות `,
+    title: `תבשיל אורז נתחי עוף וירקות `,
+    slug: 'tvshil-avrz-nthi-ivf-virkvt',
+    description: `כפי שמכונה אצלינו, האורז של דור.`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `כפי שמכונה אצלינו, האורז של דור.`,
     ingredients: [
       { name: `חזה עוף /טופו`, quantity: 400, unit: 'gram' },
       { name: `בצלים גדולים קצוצים`, quantity: 2, unit: null },
@@ -2208,12 +2891,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים את האפונה, עשבי התיבול והמים ומביאים לרתיחה`,
       `מבשלים על להבה נמוכה כ- 20-25 דק' עד שכל המים נספגים באורז.`
     ],
-    type: `עיקריות`,
-    story: `כפי שמכונה אצלינו, האורז של דור.`,
+    imageUrl: null,
   },
   {
     id: '0cf1c77e-8625-465d-99d9-e5285265ea6c',
-    name: `פאי גבינה חגיגי`,
+    title: `פאי גבינה חגיגי`,
+    slug: 'fai-gvinh-hgigi',
+    description: `אם כבר עוגת גבינה אפויה - זאת הבחירה שלי`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `אם כבר עוגת גבינה אפויה - זאת הבחירה שלי`,
     ingredients: [
       { name: `לתחתית`, quantity: null, unit: null },
       { name: `פירורי ביסקוויטים (250 גר)`, quantity: 2, unit: 'cup' },
@@ -2244,12 +2935,24 @@ export const RECIPES: RecipeEntry[] = [
       `מקציפים את השמנת , החלב והפודינג עד להיווצרות קרם סמיך.`,
       `מורחים/מזלפים את הקרם על גבי העוגה לאחר שהתקררה.`
     ],
-    type: `עוגות ועוגיות`,
-    story: `אם כבר עוגת גבינה אפויה - זאת הבחירה שלי`,
+    imageUrl: null,
   },
   {
     id: 'd4609eb4-a784-4421-b554-85640eecf494',
-    name: `גרנולה`,
+    title: `גרנולה`,
+    slug: 'grnvlh',
+    description: `גיוונים:
+אפשר לגוון את סוגי האגוזים
+אפשר להוסיף בסוף חמוציות או צימוקים כהים או שניהם`,
+    type: `שונות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: `גיוונים:
+אפשר לגוון את סוגי האגוזים
+אפשר להוסיף בסוף חמוציות או צימוקים כהים או שניהם`,
     ingredients: [
       { name: `קוואקר עבה`, quantity: 6, unit: 'cup' },
       { name: `סוכר חום`, quantity: '1/2-1', unit: 'cup' },
@@ -2272,14 +2975,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים את הבננות והצימוקים/חמוציות`,
       `מאחסנים בכלי סגור היטב`
     ],
-    type: `שונות`,
-    story: `גיוונים:
-אפשר לגוון את סוגי האגוזים
-אפשר להוסיף בסוף חמוציות או צימוקים כהים או שניהם`,
+    imageUrl: null,
   },
   {
     id: '80fbfbb5-f3e9-428b-973a-a1d17c2c4daf',
-    name: `סלט "הכל" של אורנה ואלה`,
+    title: `סלט "הכל" של אורנה ואלה`,
+    slug: 'slt-hkl-shl-avrnh-valh',
+    description: `הסלט הזה הצטרף לפנתיאון יחד עם הצטרפותה של נועה למשפחה. נועה סיפרה שאמא שלה אוהבת אותו והכנו אותו לראשונה באירוח של פיצות בטבון. התאהבנו! כמות הרוטב מספיקה ליותר מסלט אחד.`,
+    type: `סלטים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `הסלט הזה הצטרף לפנתיאון יחד עם הצטרפותה של נועה למשפחה. נועה סיפרה שאמא שלה אוהבת אותו והכנו אותו לראשונה באירוח של פיצות בטבון. התאהבנו! כמות הרוטב מספיקה ליותר מסלט אחד.`,
     ingredients: [
       { name: `לרוטב עשבי תיבול:`, quantity: null, unit: null },
       { name: `עלי נענע`, quantity: null, unit: 'cup' },
@@ -2307,12 +3016,22 @@ export const RECIPES: RecipeEntry[] = [
       `יוצקים מלמעלה מספר כפות מהרוטב`,
       `מפזרים גבינה וקרוטונים ומגישים`
     ],
-    type: `סלטים`,
-    story: `הסלט הזה הצטרף לפנתיאון יחד עם הצטרפותה של נועה למשפחה. נועה סיפרה שאמא שלה אוהבת אותו והכנו אותו לראשונה באירוח של פיצות בטבון. התאהבנו! כמות הרוטב מספיקה ליותר מסלט אחד.`,
+    imageUrl: null,
   },
   {
     id: 'd2412106-35bf-4722-bf66-24e04ecac86d',
-    name: `עוגת גבינה של אידה`,
+    title: `עוגת גבינה של אידה`,
+    slug: 'ivgt-gvinh-shl-aidh',
+    description: `עוגת הגבינה האפויה של אידה הייתה האהובה עלי מכל העוגות שאפתה. בצעירותינו, נהגה לאפות את העוגה בתבנית עגולה והתוצאה הייתה עוגה אוורירית וגבוהה. בשנים האחרונות, כשאידה עוד מעט בת 90 עברה העוגה שינויים הן בגודל התבנית והן במרכיביה שלא היו עקביים.
+אנחנו נזכור את העוגה העגולה והטעימה.`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `עוגת הגבינה האפויה של אידה הייתה האהובה עלי מכל העוגות שאפתה. בצעירותינו, נהגה לאפות את העוגה בתבנית עגולה והתוצאה הייתה עוגה אוורירית וגבוהה. בשנים האחרונות, כשאידה עוד מעט בת 90 עברה העוגה שינויים הן בגודל התבנית והן במרכיביה שלא היו עקביים.
+אנחנו נזכור את העוגה העגולה והטעימה.`,
     ingredients: [
       { name: `ביצים`, quantity: 6, unit: null },
       { name: `סוכר`, quantity: null, unit: 'cup' },
@@ -2342,13 +3061,22 @@ export const RECIPES: RecipeEntry[] = [
       `מנמיכים ל- C°‏ 150`,
       `ככלל העוגה תמיד עולה ויורדת. אמורה להיות בסוף האפיה בגובה שהיטה התערובת לפני האפיה, או קצת יותר.`
     ],
-    type: `עוגות ועוגיות`,
-    story: `עוגת הגבינה האפויה של אידה הייתה האהובה עלי מכל העוגות שאפתה. בצעירותינו, נהגה לאפות את העוגה בתבנית עגולה והתוצאה הייתה עוגה אוורירית וגבוהה. בשנים האחרונות, כשאידה עוד מעט בת 90 עברה העוגה שינויים הן בגודל התבנית והן במרכיביה שלא היו עקביים.
-אנחנו נזכור את העוגה העגולה והטעימה.`,
+    imageUrl: null,
   },
   {
     id: 'd418adcd-3395-4601-89b2-96ceb4f507fe',
-    name: `עוגת התפוזים של סבתא אידה`,
+    title: `עוגת התפוזים של סבתא אידה`,
+    slug: 'ivgt-htfvzim-shl-svta-aidh',
+    description: `כשאידה נתנה לי את המתכון, גיליתי שזאת עוגה של קרין גורן, מה שמסביר את כמות הסוכר הגבוהה. אני מפחיתה..
+והעיקר, עוגה פרווה שכולם אוהבים.`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `כשאידה נתנה לי את המתכון, גיליתי שזאת עוגה של קרין גורן, מה שמסביר את כמות הסוכר הגבוהה. אני מפחיתה..
+והעיקר, עוגה פרווה שכולם אוהבים.`,
     ingredients: [
       { name: `ביצים`, quantity: 6, unit: null },
       { name: `סוכר (300 גר')`, quantity: '11/2', unit: 'cup' },
@@ -2366,13 +3094,22 @@ export const RECIPES: RecipeEntry[] = [
       `אופים בתבנית עגולה 26 משומנת, בחום של C°‏ 160.`,
       `משך האפיה כשעה, עד שנוצר קרום זהוב ורך מלמעלה או עד שקיסם הננעץ בעוגה יוצא יבש`
     ],
-    type: `עוגות ועוגיות`,
-    story: `כשאידה נתנה לי את המתכון, גיליתי שזאת עוגה של קרין גורן, מה שמסביר את כמות הסוכר הגבוהה. אני מפחיתה..
-והעיקר, עוגה פרווה שכולם אוהבים.`,
+    imageUrl: null,
   },
   {
     id: '277cbe71-c588-4bfe-b0da-98b5af1b0d46',
-    name: `אורז מלא עם ירקות שורש בתנור`,
+    title: `אורז מלא עם ירקות שורש בתנור`,
+    slug: 'avrz-mla-im-irkvt-shvrsh-vtnvr',
+    description: `מתכון שהגיע מדוד אלון.
+אהוב על שחר`,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: `מתכון שהגיע מדוד אלון.
+אהוב על שחר`,
     ingredients: [
       { name: `שמן זית`, quantity: 2, unit: 'tbsp' },
       { name: `כרישות`, quantity: 2, unit: null },
@@ -2399,13 +3136,20 @@ export const RECIPES: RecipeEntry[] = [
       `מעבירים את הסיר המכוסה לתנור ל -50 דק'.`,
       `מסירים את המכסה ואופים 10 דק' נוספות`
     ],
-    type: `תוספות`,
-    story: `מתכון שהגיע מדוד אלון.
-אהוב על שחר`,
+    imageUrl: null,
   },
   {
     id: 'ab9469e8-95dd-498c-b9f5-cd82d696f019',
-    name: `רוטב הבית למנגל`,
+    title: `רוטב הבית למנגל`,
+    slug: 'rvtv-hvit-lmngl',
+    description: null,
+    type: `רטבים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: null,
     ingredients: [
       { name: `עבור 2 ק"ג בשר/עוף`, quantity: null, unit: null },
       { name: `רוטב סויה`, quantity: '1/3', unit: 'cup' },
@@ -2423,12 +3167,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוציאים את הבשר/עוף ומניחים על רשת על מנת שהנוזלים יגרו.`,
       `צולים על הגריל..`
     ],
-    type: `רטבים`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '3fdfda38-7d24-42a6-97d5-f2b6363f7632',
-    name: `קיש פטריות עם בצק פטנט`,
+    title: `קיש פטריות עם בצק פטנט`,
+    slug: 'kish-ftrivt-im-vtsk-ftnt',
+    description: null,
+    type: `אפייה מלוחה`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: null,
     ingredients: [
       { name: `לקלתית`, quantity: null, unit: null },
       { name: `חמאה`, quantity: 100, unit: 'gram' },
@@ -2475,12 +3227,26 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את הפטריות עם תערובת הרויאל ויוצקים לקלתית`,
       `אופים 40 דק' או עד שהמלית מתייצבת ומזהיבה.`
     ],
-    type: `אפייה מלוחה`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '85db5bf3-ba75-4736-978b-3f219f99f07a',
-    name: `מרק אדום לקוסקוס `,
+    title: `מרק אדום לקוסקוס `,
+    slug: 'mrk-advm-lkvskvs',
+    description: `לשחר ולי יש קבוצת ווטסאפ משותפת של מתכונים.
+המתכון הזה ממנה עם קצת שינויים שלי.
+מי שרוצה יכול להוסיף לתבשיל גם שוקיים.
+מכינים קוסקוס וסוגרים ארוחה.`,
+    type: `מרקים`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 45,
+    servings: 6,
+    story: `לשחר ולי יש קבוצת ווטסאפ משותפת של מתכונים.
+המתכון הזה ממנה עם קצת שינויים שלי.
+מי שרוצה יכול להוסיף לתבשיל גם שוקיים.
+מכינים קוסקוס וסוגרים ארוחה.`,
     ingredients: [
       { name: `בצל חתוך לרצועות`, quantity: 1, unit: null },
       { name: `שום כתושות`, quantity: 4, unit: 'clove' },
@@ -2514,15 +3280,20 @@ export const RECIPES: RecipeEntry[] = [
       `טועמים ומוסיפים תבלינים בהתאם לצורך.`,
       `מפזרים את הכוסברה על המרק ומבשלים 10 דק' נוספות.`
     ],
-    type: `מרקים`,
-    story: `לשחר ולי יש קבוצת ווטסאפ משותפת של מתכונים.
-המתכון הזה ממנה עם קצת שינויים שלי.
-מי שרוצה יכול להוסיף לתבשיל גם שוקיים.
-מכינים קוסקוס וסוגרים ארוחה.`,
+    imageUrl: null,
   },
   {
     id: 'bfd3f9a0-7472-4895-9087-c4926f7aa5e5',
-    name: `בצל ממולא בשר`,
+    title: `בצל ממולא בשר`,
+    slug: 'vtsl-mmvla-vshr',
+    description: `המתכון האהוב של אלון, במקור של אהרוני`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `המתכון האהוב של אלון, במקור של אהרוני`,
     ingredients: [
       { name: `החומרים:`, quantity: null, unit: null },
       { name: `בצלים גדולים`, quantity: 6, unit: null },
@@ -2562,12 +3333,20 @@ export const RECIPES: RecipeEntry[] = [
       `מביאים לרתיחה , מבשלים שעה וחצי.`,
       `מגבירים את האש ומבשלים עד שהרוטב מסמיך והבצלים מזוגגים יפה.`
     ],
-    type: `עיקריות`,
-    story: `המתכון האהוב של אלון, במקור של אהרוני`,
+    imageUrl: null,
   },
   {
     id: 'a68329a3-9707-4a40-befb-71ca0c8a98b9',
-    name: `פרגיות בחלב קוקוס`,
+    title: `פרגיות בחלב קוקוס`,
+    slug: 'frgivt-vhlv-kvkvs',
+    description: `המתכון של אלון...`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `המתכון של אלון...`,
     ingredients: [
       { name: `פרגיות חתוכות`, quantity: 1, unit: 'kg' },
       { name: `בצל גדול`, quantity: 1, unit: null },
@@ -2600,12 +3379,20 @@ export const RECIPES: RecipeEntry[] = [
       `מביאים לרתיחה ומבשלים 5 דק' נוספות עם מכסה פתוח.`,
       `מפזרים את הכוסברה הקצוצה ומגישים.`
     ],
-    type: `עיקריות`,
-    story: `המתכון של אלון...`,
+    imageUrl: null,
   },
   {
     id: '02f3b3e5-548d-4aca-9ee7-5f20cef6dfcf',
-    name: `עוף ותפו"א בנוסח הודי`,
+    title: `עוף ותפו"א בנוסח הודי`,
+    slug: 'ivf-vtfv-a-vnvsh-hvdi',
+    description: null,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: null,
     ingredients: [
       { name: `תפו"א`, quantity: 2, unit: 'kg' },
       { name: `ירכיים חתוכות`, quantity: 2, unit: 'kg' },
@@ -2634,12 +3421,20 @@ export const RECIPES: RecipeEntry[] = [
       `מקלפים, חותכים לקוביות ומוסיפים לסיר לאחר הבישול.`,
       `מגישים`
     ],
-    type: `עיקריות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: 'a379bf3e-308d-41d1-8364-bf8198aab2cf',
-    name: `תפו"א ודלעת בנוסח הודי`,
+    title: `תפו"א ודלעת בנוסח הודי`,
+    slug: 'tfv-a-vdlit-vnvsh-hvdi',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `שמן`, quantity: 3, unit: 'tbsp' },
       { name: `עלה דפנה`, quantity: 1, unit: null },
@@ -2663,12 +3458,20 @@ export const RECIPES: RecipeEntry[] = [
       `מוסיפים: צ'ילי, כוסברה, כורכום, מלח וסוכר, תמר הינדי ומים.`,
       `מכסים ומבשלים בחום נמוך עד שהירקות מתרככים. בערך 15 דקות.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   },
   {
     id: '676042e3-d098-4ca4-a71e-a23cd81cec13',
-    name: `עוף, אורז , גזר וצנוברים`,
+    title: `עוף, אורז , גזר וצנוברים`,
+    slug: 'ivf-avrz-gzr-vtsnvvrim',
+    description: `העוף שעמית אוהבת, בהשראת מתכון של שרונה, בניחוחות הודו..`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `העוף שעמית אוהבת, בהשראת מתכון של שרונה, בניחוחות הודו..`,
     ingredients: [
       { name: `כרעיים חתוכות`, quantity: 4, unit: null },
       { name: `אורז בסמטי`, quantity: 2, unit: 'cup' },
@@ -2685,12 +3488,20 @@ export const RECIPES: RecipeEntry[] = [
       `מאדים יחדיו בסיר מכוסה עוד כשעה עד שהעוף יתרכך.`,
       `טעים יותר למחרת היום...`
     ],
-    type: `עיקריות`,
-    story: `העוף שעמית אוהבת, בהשראת מתכון של שרונה, בניחוחות הודו..`,
+    imageUrl: null,
   },
   {
     id: '86dedbac-a3c3-43fb-976e-b46c45ba899e',
-    name: `בין גולש לחמין`,
+    title: `בין גולש לחמין`,
+    slug: 'vin-gvlsh-lhmin',
+    description: `קרוטית`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `קרוטית`,
     ingredients: [
       { name: `שמן`, quantity: 2, unit: 'tbsp' },
       { name: `בשר שריר חתוך לקוביות`, quantity: 1, unit: 'kg' },
@@ -2717,12 +3528,20 @@ export const RECIPES: RecipeEntry[] = [
       `מעבירים לתנור את הסיר המכוסה ל 12-15 שעות בטמפרטורה של C°‏ 100.`,
       `אם עדיין יש יותר מדי מים, להמשיך לאפות ללא מכסה, או... לשפוך...`
     ],
-    type: `עיקריות`,
-    story: `קרוטית`,
+    imageUrl: null,
   },
   {
     id: '4fdb33d8-9918-4f92-9f23-33398f1ae3da',
-    name: `החמין של שמריז`,
+    title: `החמין של שמריז`,
+    slug: 'hhmin-shl-shmriz',
+    description: `לזכרו של אלון שמריז`,
+    type: `עיקריות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 40,
+    servings: 4,
+    story: `לזכרו של אלון שמריז`,
     ingredients: [
       { name: `שעועית לבנה מושרית בהרבה מים לפחות ללילה`, quantity: 1, unit: 'cup' },
       { name: `שעועית אדומה מושרית בהרבה מים לפחות ללילה`, quantity: 1, unit: 'cup' },
@@ -2749,12 +3568,20 @@ export const RECIPES: RecipeEntry[] = [
       `מביאים לרתיחה, מנמיכים את הלהבה, מוסיפים לסיר את הביצים ומבשלים 3-4 שעות על אש נמוכה.`,
       `מעבירים לפלטה או לתנור למשך הלילה בחום של C°‏ 120.`
     ],
-    type: `עיקריות`,
-    story: `לזכרו של אלון שמריז`,
+    imageUrl: null,
   },
   {
     id: '921de8bf-c8f5-442a-a876-a15fd5c17fad',
-    name: `עוגת אגוזי לוז עם קרם קפה`,
+    title: `עוגת אגוזי לוז עם קרם קפה`,
+    slug: 'ivgt-agvzi-lvz-im-krm-kfh',
+    description: `את העוגה הזאת, אפשר להכין כל השנה. אנחנו מכינים אותה בעיקר בפסח. אהובה במיוחד על שחר.`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `את העוגה הזאת, אפשר להכין כל השנה. אנחנו מכינים אותה בעיקר בפסח. אהובה במיוחד על שחר.`,
     ingredients: [
       { name: `חמאה בטמפ' החדר`, quantity: 200, unit: 'gram' },
       { name: `סוכר`, quantity: 200, unit: 'gram' },
@@ -2777,12 +3604,20 @@ export const RECIPES: RecipeEntry[] = [
       `מפזרים מעל את הפירורים ששמרנו בצד.`,
       `חותכים לריבועים ומגישים.`
     ],
-    type: `עוגות ועוגיות`,
-    story: `את העוגה הזאת, אפשר להכין כל השנה. אנחנו מכינים אותה בעיקר בפסח. אהובה במיוחד על שחר.`,
+    imageUrl: null,
   },
   {
     id: '6986c779-2a1f-4eca-8b98-8ccdca90843b',
-    name: `עוגת חמאה ואגסים חמה`,
+    title: `עוגת חמאה ואגסים חמה`,
+    slug: 'ivgt-hmah-vagsim-hmh',
+    description: `מתכון  שנירה רוסו פרסמה בעיתון הארץ לפני שנים רבות`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `מתכון  שנירה רוסו פרסמה בעיתון הארץ לפני שנים רבות`,
     ingredients: [
       { name: `ביצים`, quantity: 3, unit: null },
       { name: `סוכר`, quantity: 150, unit: 'gram' },
@@ -2799,12 +3634,20 @@ export const RECIPES: RecipeEntry[] = [
       `אופים בתבנית 24 משומנת ומקומחת  ב- C°‏ 170 במשך 45 דקות`,
       `מניחים ל- 10 דקות ומגישים חם`
     ],
-    type: `עוגות ועוגיות`,
-    story: `מתכון  שנירה רוסו פרסמה בעיתון הארץ לפני שנים רבות`,
+    imageUrl: null,
   },
   {
     id: '0b187d62-2c79-4d05-abcf-5107be227e35',
-    name: `עוגת תפו"ע`,
+    title: `עוגת תפו"ע`,
+    slug: 'ivgt-tfv-i',
+    description: `עוגת הבית לראש השנה. מתאימה גם לפסח עם קמח כשל"פ. מתכון של רות גילעב - חברה של סבתא תרי . המתכון המקורי עם תפוח אדום, אני בד"כ מכינה עם גראנד סמית.`,
+    type: `עוגות ועוגיות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 50,
+    servings: 12,
+    story: `עוגת הבית לראש השנה. מתאימה גם לפסח עם קמח כשל"פ. מתכון של רות גילעב - חברה של סבתא תרי . המתכון המקורי עם תפוח אדום, אני בד"כ מכינה עם גראנד סמית.`,
     ingredients: [
       { name: `לבצק:`, quantity: null, unit: null },
       { name: `קמח תופח`, quantity: 2, unit: 'cup' },
@@ -2825,12 +3668,22 @@ export const RECIPES: RecipeEntry[] = [
       `מפזרים מעל מעט חתיכות קטנות של חמאה.`,
       `אופים בחום בינוני כ-45 דק עד שהבצק מזהיב.`
     ],
-    type: `עוגות ועוגיות`,
-    story: `עוגת הבית לראש השנה. מתאימה גם לפסח עם קמח כשל"פ. מתכון של רות גילעב - חברה של סבתא תרי . המתכון המקורי עם תפוח אדום, אני בד"כ מכינה עם גראנד סמית.`,
+    imageUrl: null,
   },
   {
     id: '0a3a6eb0-f672-47dd-80a8-b20fd6475860',
-    name: `פשטידת אטריות מתוקה`,
+    title: `פשטידת אטריות מתוקה`,
+    slug: 'fshtidt-atrivt-mtvkh',
+    description: `inka's nudelspise
+מתכון של חברה של תרי מהקמפינג קלאב. אהוב ע"י דור.`,
+    type: `שונות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: `inka's nudelspise
+מתכון של חברה של תרי מהקמפינג קלאב. אהוב ע"י דור.`,
     ingredients: [
       { name: `אטריות ברוחב בינוני`, quantity: 250, unit: 'gram' },
       { name: `חמאה`, quantity: 100, unit: 'gram' },
@@ -2849,13 +3702,20 @@ export const RECIPES: RecipeEntry[] = [
       `מערבבים את קצף החלבונים עם תערובת האטריות.`,
       `אופים כ-45 דקות בחום בינוני`
     ],
-    type: `שונות`,
-    story: `inka's nudelspise
-מתכון של חברה של תרי מהקמפינג קלאב. אהוב ע"י דור.`,
+    imageUrl: null,
   },
   {
     id: '743badec-2322-466f-bffb-3418a777d1f2',
-    name: `Malai 2nd recepie`,
+    title: `Malai 2nd recepie`,
+    slug: 'malai-2nd-recepie',
+    description: `פשטידה מתוקה מהמטבח הרומני. המתכון הזה הוא ווריאציה על המתכון המקורי ונע בין פשטידה לעוגה. אצלינו בבית ההורים נאכל כמנה עיקרית בארוחת ערב ("בשרית"). קל להכנה.`,
+    type: `שונות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 6,
+    story: `פשטידה מתוקה מהמטבח הרומני. המתכון הזה הוא ווריאציה על המתכון המקורי ונע בין פשטידה לעוגה. אצלינו בבית ההורים נאכל כמנה עיקרית בארוחת ערב ("בשרית"). קל להכנה.`,
     ingredients: [
       { name: `לתערובת הבסיס:`, quantity: null, unit: null },
       { name: `ביצים`, quantity: 2, unit: null },
@@ -2877,12 +3737,20 @@ export const RECIPES: RecipeEntry[] = [
       `יוצקים מעל את שארית בלילת הבסיס.`,
       `אופים בחום בינוני כ- 40 דקת.`
     ],
-    type: `שונות`,
-    story: `פשטידה מתוקה מהמטבח הרומני. המתכון הזה הוא ווריאציה על המתכון המקורי ונע בין פשטידה לעוגה. אצלינו בבית ההורים נאכל כמנה עיקרית בארוחת ערב ("בשרית"). קל להכנה.`,
+    imageUrl: null,
   },
   {
     id: '3cff89d8-9304-4912-8de9-1753e80cdbc7',
-    name: `אורז צהוב שילדים אוהבים`,
+    title: `אורז צהוב שילדים אוהבים`,
+    slug: 'avrz-tshvv-shildim-avhvim',
+    description: null,
+    type: `תוספות`,
+    difficulty: 'Easy',
+    prepTimeMinutes: 20,
+    prepTimeNote: null,
+    cookTimeMinutes: 20,
+    servings: 8,
+    story: null,
     ingredients: [
       { name: `שמן`, quantity: '1/4', unit: 'cup' },
       { name: `בצל קצוץ`, quantity: 1, unit: null },
@@ -2901,7 +3769,6 @@ export const RECIPES: RecipeEntry[] = [
       `5. מבשלים כ-20 דקות. מסירים מהאש ומשאירים 5 דק' נוספות עם המכסה.`,
       `6. מערבבים בעדינות בעזרת מזלג ומגישים.`
     ],
-    type: `תוספות`,
-    story: ``,
+    imageUrl: null,
   }
 ];

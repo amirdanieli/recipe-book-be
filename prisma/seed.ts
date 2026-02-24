@@ -15,42 +15,6 @@ if (!connectionString) {
 const adapter = new PrismaPg({ connectionString });
 const prisma = new PrismaClient({ adapter, log: ['info', 'warn', 'error'] });
 
-const HEBREW_TO_LATIN: [RegExp, string][] = [
-  [/א/g, 'a'],
-  [/ב/g, 'v'],
-  [/ג/g, 'g'],
-  [/ד/g, 'd'],
-  [/ה/g, 'h'],
-  [/ו/g, 'v'],
-  [/ז/g, 'z'],
-  [/ח/g, 'h'],
-  [/ט/g, 't'],
-  [/י/g, 'i'],
-  [/כ|ך/g, 'k'],
-  [/ל/g, 'l'],
-  [/מ|ם/g, 'm'],
-  [/נ|ן/g, 'n'],
-  [/ס/g, 's'],
-  [/ע/g, 'i'],
-  [/פ|ף/g, 'f'],
-  [/צ|ץ/g, 'ts'],
-  [/ק/g, 'k'],
-  [/ר/g, 'r'],
-  [/ש/g, 'sh'],
-  [/ת/g, 't'],
-];
-
-function toSlug(hebrew: string): string {
-  let result = hebrew;
-  for (const [pattern, replacement] of HEBREW_TO_LATIN) {
-    result = result.replace(pattern, replacement);
-  }
-  return result
-    .replace(/[^a-z0-9]+/gi, '-')
-    .replace(/^-+|-+$/g, '')
-    .toLowerCase();
-}
-
 const CATEGORY_DATA: { name: string; slug: string }[] = [
   { name: 'מרקים', slug: 'marakim' },
   { name: 'סלטים', slug: 'salatim' },
@@ -63,23 +27,6 @@ const CATEGORY_DATA: { name: string; slug: string }[] = [
   { name: 'רטבים', slug: 'retavim' },
   { name: 'שונות', slug: 'shonot' },
 ];
-
-function getCookTime(categoryName: string): number {
-  if (categoryName === 'מרקים') return 45;
-  if (categoryName === 'עיקריות') return 40;
-  if (categoryName === 'עוגות ועוגיות' || categoryName === 'אפייה מלוחה')
-    return 50;
-  return 20;
-}
-
-function getServings(categoryName: string): number {
-  if (categoryName === 'מרקים') return 6;
-  if (categoryName === 'עיקריות') return 4;
-  if (categoryName === 'עוגות ועוגיות' || categoryName === 'אפייה מלוחה')
-    return 12;
-  if (categoryName === 'סלטים' || categoryName === 'תוספות') return 8;
-  return 6;
-}
 
 async function main() {
   console.log('Seed started...');
@@ -113,46 +60,31 @@ async function main() {
   // 4. Load recipe data
   const recipes: RecipeEntry[] = RECIPES;
 
-  // Track used slugs to avoid collisions
-  const usedSlugs = new Map<string, number>();
-
-  function uniqueSlug(base: string): string {
-    if (!usedSlugs.has(base)) {
-      usedSlugs.set(base, 1);
-      return base;
-    }
-    const count = usedSlugs.get(base)! + 1;
-    usedSlugs.set(base, count);
-    return `${base}-${count}`;
-  }
-
   // 5. Create Recipes
   for (const entry of recipes) {
     const categoryId = categoryMap.get(entry.type);
     if (!categoryId) {
-      console.warn(`Unknown category type: ${entry.type}, skipping recipe: ${entry.name}`);
+      console.warn(
+        `Unknown category type: ${entry.type}, skipping recipe: ${entry.title}`,
+      );
       continue;
     }
 
-    const baseSlug = toSlug(entry.name);
-    const slug = uniqueSlug(baseSlug);
-
-    const story = entry.story && entry.story.trim() ? entry.story.trim() : null;
-
     const created = await prisma.recipe.create({
       data: {
-        title: entry.name,
-        slug,
-        description: story,
-        story,
+        title: entry.title,
+        slug: entry.slug,
+        description: entry.description,
+        story: entry.story,
         categoryId,
-        difficulty: Difficulty.Easy,
-        prepTimeMinutes: 20,
-        cookTimeMinutes: getCookTime(entry.type),
-        servings: getServings(entry.type),
+        difficulty: entry.difficulty as Difficulty,
+        prepTimeMinutes: entry.prepTimeMinutes,
+        prepTimeNote: entry.prepTimeNote,
+        cookTimeMinutes: entry.cookTimeMinutes,
+        servings: entry.servings,
         ingredients: entry.ingredients,
         steps: entry.steps,
-        imageUrl: null,
+        imageUrl: entry.imageUrl,
         createdById: admin.id,
       },
     });
