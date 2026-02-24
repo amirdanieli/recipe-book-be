@@ -1,4 +1,4 @@
-import { PrismaClient, Role, Difficulty } from '@prisma/client';
+import { PrismaClient, Role, Difficulty, Prisma } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import * as bcrypt from 'bcrypt';
 import * as dotenv from 'dotenv';
@@ -85,7 +85,7 @@ async function main() {
         prepTimeNote: entry.prepTimeNote,
         cookTimeMinutes: entry.cookTimeMinutes,
         servings: entry.servings,
-        ingredients: entry.ingredients,
+        ingredients: entry.ingredients as unknown as Prisma.InputJsonValue,
         steps: entry.steps,
         imageUrl: entry.imageUrl,
         createdById: admin.id,
