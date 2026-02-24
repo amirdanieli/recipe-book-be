@@ -22,7 +22,7 @@ RUN npm install --ignore-scripts
 COPY nest-cli.json tsconfig*.json ./
 COPY src ./src
 
-RUN npx prisma generate
+RUN DATABASE_URL="postgresql://placeholder:placeholder@localhost:5432/placeholder" npx prisma generate
 RUN npm run build
 
 # Keep only production dependencies for the runtime image
