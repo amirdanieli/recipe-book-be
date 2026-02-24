@@ -25,7 +25,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '6ed7cf09-8078-4485-a532-e845d02741a1',
     title: `מרק עדשים עם איטריות`,
-    slug: 'mrk-idshim-im-aitrivt',
+    slug: 'lentil-soup-with-noodles',
     description: `מרק מחמם ליום חורף קר`,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -56,7 +56,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'e454b947-f40b-4fe7-978b-af07176c56ab',
     title: `מרק עדשים עם ירקות שורש`,
-    slug: 'mrk-idshim-im-irkvt-shvrsh',
+    slug: 'lentil-soup-with-root-vegetables',
     description: `מרק נהדר לחורף`,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -89,7 +89,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'c9bb8a89-0c64-41ec-bda2-8eaf0edc27dc',
     title: `מרק עדשים וחלב קוקוס`,
-    slug: 'mrk-idshim-vhlv-kvkvs',
+    slug: 'lentil-and-coconut-milk-soup',
     description: `טעם של אסיה`,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -127,7 +127,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '4ed3e2ed-5c19-4b93-997e-b364ca26b594',
     title: `סלט גזר ופקאנים`,
-    slug: 'slt-gzr-vfkanim',
+    slug: 'carrot-and-pecan-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -156,7 +156,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'c1513595-aa7a-43c7-b3f8-de3539ff3ba2',
     title: `סלט גזר ושקדים מסוכרים`,
-    slug: 'slt-gzr-vshkdim-msvkrim',
+    slug: 'carrot-and-candied-almond-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -190,7 +190,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '205919b9-d942-4723-8353-cd67286096eb',
     title: `סלט כרוב וצנוברים`,
-    slug: 'slt-krvv-vtsnvvrim',
+    slug: 'cabbage-and-pine-nut-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -221,7 +221,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0d811195-f1eb-473c-ad74-c59c4d194c13',
     title: `סלט כרוב, פקאנים וחמוציות`,
-    slug: 'slt-krvv-fkanim-vhmvtsivt',
+    slug: 'cabbage-pecan-and-cranberry-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -255,7 +255,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'dbaab990-c02d-49b7-a2ea-446846038ab7',
     title: `סלט כרוב ונבטים`,
-    slug: 'slt-krvv-vnvtim',
+    slug: 'cabbage-and-sprout-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -282,7 +282,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '346aa4bf-4928-4b5a-b528-297236688768',
     title: `סלט חסה ברוטב פרג`,
-    slug: 'slt-hsh-vrvtv-frg',
+    slug: 'lettuce-salad-with-poppy-dressing',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -316,7 +316,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'dfb4deaa-b888-4f54-85d3-d7d23595c6b8',
     title: `סלט חסה ורימונים`,
-    slug: 'slt-hsh-vrimvnim',
+    slug: 'lettuce-and-pomegranate-salad',
     description: `סלט שאהוב על אמיר`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -344,7 +344,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '16293360-f457-4187-8993-194bd3bca6bd',
     title: `סלט חסה ותפוחי עץ`,
-    slug: 'slt-hsh-vtfvhi-its',
+    slug: 'lettuce-and-apple-salad',
     description: `הסלט שאהוב על דור
 המתכון הגיע משכנה של לילך, בראש העין, כשלילך גרה בשכירות בבית של בני גנץ.`,
     type: `סלטים`,
@@ -381,7 +381,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'f924f9d9-eb0d-43be-a52c-64897d30d808',
     title: `סלט חסה וירקות שורש`,
-    slug: 'slt-hsh-virkvt-shvrsh',
+    slug: 'lettuce-and-root-vegetable-salad',
     description: `הסלט שכולם אוהבים`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -413,7 +413,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'aff9acb0-6c08-463e-9ace-c27137fd4cad',
     title: `סלט חסה, פטריות ונבטים`,
-    slug: 'slt-hsh-ftrivt-vnvtim',
+    slug: 'lettuce-mushroom-and-sprout-salad',
     description: `מתכון שקיבלתי מעינת קופל, חברתי מתקופת השהות בלונדון.`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -448,7 +448,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'c3b2c2ae-85a0-4eef-a732-5644b865d36f',
     title: `סלט שורשים`,
-    slug: 'slt-shvrshim',
+    slug: 'root-vegetable-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -481,7 +481,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'eb2bfc51-6699-4c68-be40-29dc968c8d22',
     title: `סלט סלרי`,
-    slug: 'slt-slri',
+    slug: 'celery-salad',
     description: `סלט שהמצאתי בהשראת סלט שאכלתי באירוע.
 הרוטב לקוח מתוך הספר "ביסים". זהו הרוטב של סלט הגזר והשקדים.`,
     type: `סלטים`,
@@ -516,7 +516,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'b353e81d-35f5-4335-8d67-2dc20e4685c7',
     title: `סלט עשבים וחמוציות`,
-    slug: 'slt-ishvim-vhmvtsivt',
+    slug: 'herb-and-cranberry-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -545,7 +545,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '45323de9-423e-42ba-bca5-ca3634fe0179',
     title: `סלט קולרבי ומלפפון`,
-    slug: 'slt-kvlrvi-vmlffvn',
+    slug: 'kohlrabi-and-cucumber-salad',
     description: `את הסלט הזה מכינה ללא הגבינה.
 לקוח מאחד מספריה של לייזה פאנלים`,
     type: `סלטים`,
@@ -577,7 +577,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'e999cb7c-5016-4607-95f6-b80587fb6ee4',
     title: `סלט יווני`,
-    slug: 'slt-ivvni',
+    slug: 'greek-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -608,7 +608,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0ea42498-ddd9-40b8-a9e7-b703854da86e',
     title: `סלט קפרזה`,
-    slug: 'slt-kfrzh',
+    slug: 'caprese-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -635,7 +635,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '58971c71-06e9-4a51-951b-ccffa0744016',
     title: `סלט ירקות עם צפתית וצנוברים`,
-    slug: 'slt-irkvt-im-tsftit-vtsnvvrim',
+    slug: 'vegetable-salad-with-feta-and-pine-nuts',
     description: `לקוח מתוך הספר "בישולה" של שולה מודן`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -675,7 +675,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'e0b37669-1eab-4d7a-a3c5-9651e7cfef78',
     title: `סלט חסה ובוטנים`,
-    slug: 'slt-hsh-vvvtnim',
+    slug: 'lettuce-and-peanut-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -709,7 +709,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'a8863dd0-a800-4e3e-ba2f-5e76fcfb9777',
     title: `סלט עגבניות שרי`,
-    slug: 'slt-igvnivt-shri',
+    slug: 'cherry-tomato-salad',
     description: `ואריציה לסלט של אלון שעמית אוהבת`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -744,7 +744,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'b11a866b-3a11-431f-965a-e7c7aa72680b',
     title: `סלט חיטה`,
-    slug: 'slt-hith',
+    slug: 'wheat-salad',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -773,7 +773,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'c3da0241-dca2-4ed1-8732-11eecc17ebf2',
     title: `סלט קישואים וזיתים`,
-    slug: 'slt-kishvaim-vzitim',
+    slug: 'zucchini-and-olive-salad',
     description: null,
     type: `ירקות`,
     difficulty: 'Easy',
@@ -808,7 +808,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '963aa367-83a2-4362-b98b-e2dbfff9db90',
     title: `סלט תפו"א ומיונז`,
-    slug: 'slt-tfv-a-vmivnz',
+    slug: 'potato-and-mayo-salad',
     description: `סלט שהיווה ארוחת צהרים בבית אמא ואבא בערב פסח.`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -836,7 +836,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '1dc730a5-cbb3-47cd-a391-9fa5a1f4032a',
     title: `קציצות כרישה`,
-    slug: 'ktsitsvt-krishh',
+    slug: 'leek-patties',
     description: `קציצות הכרישה הכי טעימות בעולם של סבתא תרי! 
 מתכון שמככב במשפחה בכל פסח.`,
     type: `ירקות`,
@@ -872,7 +872,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '9202208a-6943-4b28-8720-6c3fbceed08f',
     title: `שעועית ירוקה`,
-    slug: 'shiviit-irvkh',
+    slug: 'green-beans',
     description: `מתכון של ניר רוסו`,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -896,8 +896,8 @@ export const RECIPES: RecipeEntry[] = [
   },
   {
     id: 'bcba6d47-0286-4e1c-800b-a23e8a2ff9f6',
-    title: `אורז פרסי ירוק של חיים כהן `,
-    slug: 'avrz-frsi-irvk-shl-hiim-khn',
+    title: `אורז פרסי ירוק של חיים כהן`,
+    slug: 'haim-cohen-green-persian-rice',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -928,8 +928,8 @@ export const RECIPES: RecipeEntry[] = [
   },
   {
     id: '3ac0f6ff-14ae-4738-a95a-1c18350ecc53',
-    title: `אורז פרסי של נירה רוסו `,
-    slug: 'avrz-frsi-shl-nirh-rvsv',
+    title: `אורז פרסי של נירה רוסו`,
+    slug: 'nira-russo-persian-rice',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -961,8 +961,8 @@ export const RECIPES: RecipeEntry[] = [
   },
   {
     id: '35e75b56-35e7-4430-8e97-c19604ee5b89',
-    title: `אורז עם עלי גפן של לייזה פאנלים `,
-    slug: 'avrz-im-ili-gfn-shl-liizh-fanlim',
+    title: `אורז עם עלי גפן של לייזה פאנלים`,
+    slug: 'rice-with-grape-leaves',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -996,7 +996,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'f4c01495-1e2e-45ff-8c88-bacf36196354',
     title: `תפו"א בשקית קוקי`,
-    slug: 'tfv-a-vshkit-kvki',
+    slug: 'baked-potatoes-in-bag',
     description: `מתכון של מיכל מנור , כמדומני במקור של בני סיידא`,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -1026,7 +1026,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'ff084f03-ac83-4607-8134-00f09897be68',
     title: `קווץ' פוטטו`,
-    slug: 'kvvts-fvttv',
+    slug: 'squash-potato',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -1055,7 +1055,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'f7d52267-bad0-42d6-9ae1-eb9e31f38177',
     title: `צ'יפס בתנור`,
-    slug: 'ts-ifs-vtnvr',
+    slug: 'oven-fries',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -1087,7 +1087,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '5f7274fd-a10e-46fc-bf0c-762bdeec82ef',
     title: `תפו"א אדום בתנור`,
-    slug: 'tfv-a-advm-vtnvr',
+    slug: 'red-potatoes-in-oven',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -1120,7 +1120,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '48c30b72-4aa3-4e4a-b49d-459ca3032cf2',
     title: `תפו"א ובצל בתנור`,
-    slug: 'tfv-a-vvtsl-vtnvr',
+    slug: 'potatoes-and-onion-in-oven',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -1150,8 +1150,8 @@ export const RECIPES: RecipeEntry[] = [
   },
   {
     id: '9d7fc116-ea20-4dbf-b690-aa1fd54012e1',
-    title: `בורגול עם בטטה `,
-    slug: 'vvrgvl-im-vtth',
+    title: `בורגול עם בטטה`,
+    slug: 'bulgur-with-sweet-potato',
     description: `וריאציה של מתכון המקלובה (ללא עוף) של סלמה ממאסטר שף.`,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -1185,7 +1185,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '40cf83b0-73c9-413d-a029-b22ca1878f95',
     title: `קובה של סבתא`,
-    slug: 'kvvh-shl-svta',
+    slug: 'grandmas-kubeh',
     description: `קובה עיראקית, אבא אכל כל שבת אצל סבתא רבתא שהעבירה את המתכון לסבתא איידה. פעם אחת בלונדון אבא החליט שהוא חייב לאכול קובה. התקשר לסבתא והיא הכתיבה לו את המתכון, כמובן מהזיכרון. 
 השאר היסטוריה.`,
     type: `עיקריות`,
@@ -1238,7 +1238,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '4fabff0c-7bc5-4771-9d30-82d59893b0fe',
     title: `תביט`,
-    slug: 'tvit',
+    slug: 'tabit',
     description: `חמין עיראקי מסורתי, היה מאכל קבוע כל שבת עוד בעיראק וכמובן בארץ. טוב לארוחות חגיגיות. כדאי לעשות כמות כפולה לשני סירים`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -1284,7 +1284,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '8946c03b-0edb-48bf-8a48-41b942d38644',
     title: `עוגת גזר`,
-    slug: 'ivgt-gzr',
+    slug: 'carrot-cake',
     description: null,
     type: `עוגות ועוגיות`,
     difficulty: 'Easy',
@@ -1319,7 +1319,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'cd0b3ed3-8b00-47e1-a1f4-4238546e8037',
     title: `עוגת "גלית"`,
-    slug: 'ivgt-glit',
+    slug: 'galits-cake',
     description: `את המתכון הזה קיבלתי מגלית שעבדה אתי בפרופלוס בשנות התשעים. לימים הפך ל "עוגת הקפה שלי" עד שהבנתי שהילדים לא ממש אוהבים "עוגות לקפה".`,
     type: `עוגות ועוגיות`,
     difficulty: 'Easy',
@@ -1351,7 +1351,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'd669004d-0746-4770-ad75-7525aeccf462',
     title: `פאי גבינה`,
-    slug: 'fai-gvinh',
+    slug: 'cheese-pie',
     description: null,
     type: `אפייה מלוחה`,
     difficulty: 'Easy',
@@ -1389,7 +1389,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '8614af2b-933c-4758-a9e7-72fc219d59d5',
     title: `עוגיות גרנולה`,
-    slug: 'ivgivt-grnvlh',
+    slug: 'granola-cookies',
     description: `וריאציה (מופחתת סוכר) למתכון של קרין גורן`,
     type: `עוגות ועוגיות`,
     difficulty: 'Easy',
@@ -1424,7 +1424,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'b97bdfa8-8441-44bf-af14-48e780e5fa77',
     title: `מרק אספרגוס`,
-    slug: 'mrk-asfrgvs',
+    slug: 'asparagus-soup',
     description: null,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -1459,7 +1459,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '1463cf62-0bc3-4e4e-85e8-f6944c136772',
     title: `ביס בוטנים`,
-    slug: 'vis-vvtnim',
+    slug: 'peanut-bites',
     description: null,
     type: `קינוחים`,
     difficulty: 'Easy',
@@ -1492,7 +1492,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'b2efc4f2-1899-4df8-9055-3563106841d7',
     title: `כדורי בשר של איידה`,
-    slug: 'kdvri-vshr-shl-aiidh',
+    slug: 'idas-meatballs',
     description: `מנה של סבתא איידה מאז הילדות של ארז`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -1541,7 +1541,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '92e26c19-3062-46f7-8562-9f468ff18708',
     title: `נתחי בשר, עוף ואורז סיידא`,
-    slug: 'nthi-vshr-ivf-vavrz-siida',
+    slug: 'saida-meat-chicken-and-rice',
     description: `תבשיל קדירה בבישול איטי, מצוין כחמין לשבת או חג.
 בתקופה שהיינו בלונדון, התגעגענו לתביט של אידה. הקדירה הזאת הזכירה לנו את הטעם
 המתכון המקורי, ללא תפו"א.`,
@@ -1590,7 +1590,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '00fb3d3b-d1e1-4826-a9f3-16a8bf9c685d',
     title: `עוף בשקית קוקי`,
-    slug: 'ivf-vshkit-kvki',
+    slug: 'baked-chicken',
     description: `מתכון פשוט ומהיר להכנה. 15 דקות הכנה.  
 מצוין לילדים.
 המתכון בגירסתו המקורית של "סבתא לאה" מתוך הבלוג של אמהות מבשלות.
@@ -1630,7 +1630,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '6d00b83d-c420-42a2-aada-c13278788fc9',
     title: `שניצל צ'יפס`,
-    slug: 'shnitsl-ts-ifs',
+    slug: 'schnitzel-with-fries',
     description: `מנה קלה להכנה ואהובה על ילדים. אפשר לתת לילדים להכין את הצ'יפס.`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -1658,7 +1658,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '4ca07a91-387d-4a02-ab48-d8b348e4ad1f',
     title: `מרק ירקות פיקנטי`,
-    slug: 'mrk-irkvt-fiknti',
+    slug: 'spicy-vegetable-soup',
     description: null,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -1701,7 +1701,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'ce5563df-6aea-4af0-8b81-a7ed29c1d339',
     title: `מרק כתום`,
-    slug: 'mrk-ktvm',
+    slug: 'orange-soup',
     description: null,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -1737,7 +1737,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '258101a1-3911-4793-989e-91a5a7db90aa',
     title: `מרק גריסים`,
-    slug: 'mrk-grisim',
+    slug: 'barley-soup',
     description: null,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -1772,7 +1772,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '3b55591f-ec54-4043-9a4e-715a6ea6edb1',
     title: `מרק מוליגטוני`,
-    slug: 'mrk-mvligtvni',
+    slug: 'mulligatawny-soup',
     description: null,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -1812,7 +1812,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '5c0e33fb-d09b-4626-9957-df3ac2debcb4',
     title: `מרק כרישה`,
-    slug: 'mrk-krishh',
+    slug: 'leek-soup',
     description: null,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -1845,7 +1845,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'ae50cdf1-4dbc-4091-a5b2-468ba6bc711b',
     title: `מרק סלק וכדורי בשר`,
-    slug: 'mrk-slk-vkdvri-vshr',
+    slug: 'beet-soup-with-meatballs',
     description: null,
     type: `מרקים`,
     difficulty: 'Easy',
@@ -1887,7 +1887,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '18ca8ce9-6ede-4d59-a2d8-100060677609',
     title: `אורז אדום`,
-    slug: 'avrz-advm',
+    slug: 'red-rice',
     description: `לייזה פאנלים`,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -1934,7 +1934,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '8bdaf583-2e24-4656-b986-1bef0f898d80',
     title: `דג חריף עם חומוס`,
-    slug: 'dg-hrif-im-hvmvs',
+    slug: 'spicy-fish-with-hummus',
     description: null,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -1974,7 +1974,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '710a215a-6f73-4e6e-8e7e-568d53dfe6cf',
     title: `דג חריף`,
-    slug: 'dg-hrif',
+    slug: 'spicy-fish',
     description: `התכון לקוח מספרה של אלינוער רבין - שמש, ים ואןכל גם.
 היום אני משתמשת בכוסברה טרייה במקום יבשה. זה לא אותו טעם אבל טעים!!`,
     type: `עיקריות`,
@@ -2007,7 +2007,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'c6f1bfe9-8735-4d9b-8363-5b6262c61f67',
     title: `שווארמה`,
-    slug: 'shvvarmh',
+    slug: 'shawarma',
     description: `המתכון של גלית לוי מלונדון, שחיפשה פתרון לאופציות הנתחים הנמכרים בחנות הכשרה.
 הבישול הבסיסי של השוקיים מתאים גם ל - chinese pancake.`,
     type: `עיקריות`,
@@ -2041,7 +2041,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '11b05452-9b2e-4284-8000-0f839d876cb3',
     title: `בצל ממולא בשר ואורז`,
-    slug: 'vtsl-mmvla-vshr-vavrz',
+    slug: 'stuffed-onion-with-meat-and-rice',
     description: null,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -2085,7 +2085,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'ba45482f-f452-4c23-baee-cf691e5ee687',
     title: `סלט כרוב - גדעון`,
-    slug: 'slt-krvv-gdivn',
+    slug: 'gideons-cabbage-salad',
     description: `את הסלט הזה אכלנו אצל גדעון ויעל ברהום, אני משנה את התוספת "היבשה" אבל כל אחד יכול לפזר בסוף מה שבא לו`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -2115,7 +2115,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '2901a89e-345b-4559-b64c-7c118184e61a',
     title: `עוף בסילאן`,
-    slug: 'ivf-vsilan',
+    slug: 'chicken-in-silan',
     description: `מתכון שכולם אוהבים.
 פורסם בזמנו במגזין "על השולחן" כאופציה לאירוח בסוכה.
 אנחנו מאמצים אותו כל השנה.`,
@@ -2150,7 +2150,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'bce56db9-69f7-418e-8e6a-dc6b8fec010e',
     title: `עוף בקפה`,
-    slug: 'ivf-vkfh',
+    slug: 'coffee-chicken',
     description: `מתכון שכולם אוהבים, גם אלה שלא שותים קפה!!
 קל קל ומהיר.
 כל הזכויות שמורות לארנון רגב.`,
@@ -2183,7 +2183,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '01d94c89-651c-4a6a-aec5-01c0c8cd72cd',
     title: `עוף, אורז ובטטה בתנור`,
-    slug: 'ivf-avrz-vvtth-vtnvr',
+    slug: 'baked-chicken-rice-and-sweet-potato',
     description: `את המנה הזאת אכלנו בביקור אצל רוחמה ואילן במושב כנף.
 נסענו לסופ"ש עם אמיר ועמית.
 שחר שבחרה להישאר בבית , נאלצה להתמודד עם פורצים...ערב שלא ישכח.
@@ -2226,7 +2226,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '189aef5f-cd04-4148-8105-bdc1de3d05c1',
     title: `עוף בעשבי תיבול`,
-    slug: 'ivf-vishvi-tivvl',
+    slug: 'herbed-chicken',
     description: `מתכון של בני סיידא שקיבלתי ממיכל מנור. 
 אהוב על כולם.
 מומלץ להגיש עם פירה.`,
@@ -2266,7 +2266,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'b0727ced-42fe-4f39-ad67-f0c0cc1247ad',
     title: `גיבץ`,
-    slug: 'givts',
+    slug: 'gibezt',
     description: `מתכון של לייזה פאנלים.
 אני אוהבת לחתוך את הירקות לקוביות קטנות , יש להפחית את משך הבישול בהתאם`,
     type: `ירקות`,
@@ -2311,7 +2311,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'b0cf45c6-ab04-4fd4-8008-b9ef798b8b37',
     title: `גארליק נאן`,
-    slug: 'garlik-nan',
+    slug: 'garlic-naan',
     description: `מתכון של רינת ינסמן
 המתכון מיועד למחבת, אפשר גם לאפות בטאבון בחום של 180-200 מעלות בכניסה.`,
     type: `אפייה מלוחה`,
@@ -2353,7 +2353,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '7331afe7-7a62-481e-902e-a7d3604483a4',
     title: `צ'אנה מסאלה - תבשיל חומוס הודי`,
-    slug: 'ts-anh-msalh-tvshil-hvmvs-hvdi',
+    slug: 'chana-masala',
     description: `המתכון ממטבחה של רינת ינסמן
 רינת ממליצה לא לבשל חומוס יבש עם סודה לשתיה שאומנם מרככת אבל גם גורמת להיפרדות הקליפה.`,
     type: `תוספות`,
@@ -2397,7 +2397,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '4cb7d5bc-e7c7-4c42-a157-73a5d06f6b00',
     title: `צ'אטני ירוק חריף`,
-    slug: 'ts-atni-irvk-hrif',
+    slug: 'spicy-green-chutney',
     description: `רינת ינסמן`,
     type: `רטבים`,
     difficulty: 'Easy',
@@ -2426,7 +2426,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '228e4c4a-1066-4583-93aa-c7c1de9665f2',
     title: `פסטרמה ביתית`,
-    slug: 'fstrmh-vitit',
+    slug: 'homemade-pastrami',
     description: `מתוך "ספר העוף" של בני סיידא ואבי ביטון
 הכי טעים חם מהתנור`,
     type: `שונות`,
@@ -2473,7 +2473,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '38a95bff-8988-46fc-aa48-c3adfc8d8834',
     title: `עוגת שוקולד קפואה`,
-    slug: 'ivgt-shvkvld-kfvah',
+    slug: 'frozen-chocolate-cake',
     description: `זוהי עוגת השוקולד של "בישולה" (שולה מודן). מכינים אותו בעיקר בקיץ אבל אין מי שלא אוהב אותו במשך כל השנה.
 לאוכלוסייה רגישה - המתכון כולל חלבונים טריים.
 אפשר להכין בתבנית מלבנית או עגולה.`,
@@ -2517,7 +2517,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'c213dd16-bd88-4ac7-bed0-bdb3471a0b1d',
     title: `תבשיל בקר בבירה`,
-    slug: 'tvshil-vkr-vvirh',
+    slug: 'beef-stew-in-beer',
     description: `מתכון אהוב מתוך ספר הבשר של חני פרבר.
 מומלץ להגיש עם מחית תפו"א.`,
     type: `עיקריות`,
@@ -2561,7 +2561,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'd2f4c045-89f8-4ed2-9411-218efc656439',
     title: `סלט כרוב לבן - מירה`,
-    slug: 'slt-krvv-lvn-mirh',
+    slug: 'miras-white-cabbage-salad',
     description: `מירה הצטרפה למשפחה ואנחנו התאהבנו בה ובאוכל שהיא מבשלת. כמה מהמתכונים שלה אומצו באהבה. הסלט הזה הוא אחד מהם.`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -2595,7 +2595,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'ba2e3697-707f-4633-919b-2fee0792a0ec',
     title: `פילה סלמון - לימור`,
-    slug: 'filh-slmvn-limvr',
+    slug: 'limors-salmon-fillet',
     description: null,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -2626,7 +2626,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'ff7e1e48-7857-4d7a-9c95-308226ca3c19',
     title: `סלט מלפפונים ועוף/טופו של ג'פניקה`,
-    slug: 'slt-mlffvnim-vivf-tvfv-shl-g-fnikh',
+    slug: 'cucumber-chicken-tofu-salad',
     description: null,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -2658,7 +2658,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0f6618ed-361a-41cb-bec5-ca84d017a4d4',
     title: `סלט סלק עשיר`,
-    slug: 'slt-slk-ishir',
+    slug: 'rich-beet-salad',
     description: `מתכון של אורה ארגוב, ואל תשאלו אותי מי זאת..`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -2692,7 +2692,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0c378cd9-cb18-42ff-80b2-54c36d0b51d7',
     title: `קציצות עוף בתנור`,
-    slug: 'ktsitsvt-ivf-vtnvr',
+    slug: 'baked-chicken-patties',
     description: `את המתכון הזה מצאתי בגיליון "לאשה" משנת 2011.
 אין לי מושג מאין הגיע אלי העיתון..
 בכל מקרה, קציצות קלות להכנה, מהירות ודיאטתיות`,
@@ -2736,7 +2736,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'f998190e-a0b9-4742-b934-d441951484d7',
     title: `פולאו בג'יג'`,
-    slug: 'fvlav-vg-ig',
+    slug: 'pulao-biryani',
     description: `מתכון עיראקי של אורז אדום עם עוף, כשאת האורז מבשלים במי הבישול של העוף.
 הגירסה שלי קצת משודרגת עם תוספת בצל, צימוקים ושקדים`,
     type: `עיקריות`,
@@ -2776,7 +2776,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0d5ad732-f69a-4dfb-9180-2c24496267d4',
     title: `ממולאים בלי למלא = האורז של שחר`,
-    slug: 'mmvlaim-vli-lmla-havrz-shl-shhr',
+    slug: 'shahars-rice',
     description: `מתכון עתיק יומין של נירה רוסו , מעיתון הארץ, שהרעיון שלו להכין קדירה בטעם של ממולאים בלי עבודת המילוי.
 מכינים תערובת של בשר ואורז ועוטפים אותם בחתיכות פלפל או זוקיני מכל צידי הסיר. היות והילדים היו משאירים את הפלפל המבושל, שינינו גרסה והיום מכינים את הקדירה עם תפו"א, קישואים ובטטה.
 עדיין יקרא "האורז של שחר". ברור מדוע.
@@ -2826,7 +2826,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'de6a0baa-34f3-4cc2-8ed5-5a8f4b624c1d',
     title: `אורז מלא עם צנוברים בתנור`,
-    slug: 'avrz-mla-im-tsnvvrim-vtnvr',
+    slug: 'whole-grain-rice-with-pine-nuts',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -2854,8 +2854,8 @@ export const RECIPES: RecipeEntry[] = [
   },
   {
     id: 'da3b367d-0110-4505-a071-be1435b68a3c',
-    title: `תבשיל אורז נתחי עוף וירקות `,
-    slug: 'tvshil-avrz-nthi-ivf-virkvt',
+    title: `תבשיל אורז נתחי עוף וירקות`,
+    slug: 'chicken-and-vegetable-rice-stew',
     description: `כפי שמכונה אצלינו, האורז של דור.`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -2896,7 +2896,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0cf1c77e-8625-465d-99d9-e5285265ea6c',
     title: `פאי גבינה חגיגי`,
-    slug: 'fai-gvinh-hgigi',
+    slug: 'festive-cheese-pie',
     description: `אם כבר עוגת גבינה אפויה - זאת הבחירה שלי`,
     type: `עוגות ועוגיות`,
     difficulty: 'Easy',
@@ -2940,7 +2940,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'd4609eb4-a784-4421-b554-85640eecf494',
     title: `גרנולה`,
-    slug: 'grnvlh',
+    slug: 'granola',
     description: `גיוונים:
 אפשר לגוון את סוגי האגוזים
 אפשר להוסיף בסוף חמוציות או צימוקים כהים או שניהם`,
@@ -2980,7 +2980,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '80fbfbb5-f3e9-428b-973a-a1d17c2c4daf',
     title: `סלט "הכל" של אורנה ואלה`,
-    slug: 'slt-hkl-shl-avrnh-valh',
+    slug: 'orna-and-ella-everything-salad',
     description: `הסלט הזה הצטרף לפנתיאון יחד עם הצטרפותה של נועה למשפחה. נועה סיפרה שאמא שלה אוהבת אותו והכנו אותו לראשונה באירוח של פיצות בטבון. התאהבנו! כמות הרוטב מספיקה ליותר מסלט אחד.`,
     type: `סלטים`,
     difficulty: 'Easy',
@@ -3021,7 +3021,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'd2412106-35bf-4722-bf66-24e04ecac86d',
     title: `עוגת גבינה של אידה`,
-    slug: 'ivgt-gvinh-shl-aidh',
+    slug: 'idas-cheesecake',
     description: `עוגת הגבינה האפויה של אידה הייתה האהובה עלי מכל העוגות שאפתה. בצעירותינו, נהגה לאפות את העוגה בתבנית עגולה והתוצאה הייתה עוגה אוורירית וגבוהה. בשנים האחרונות, כשאידה עוד מעט בת 90 עברה העוגה שינויים הן בגודל התבנית והן במרכיביה שלא היו עקביים.
 אנחנו נזכור את העוגה העגולה והטעימה.`,
     type: `עוגות ועוגיות`,
@@ -3066,7 +3066,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'd418adcd-3395-4601-89b2-96ceb4f507fe',
     title: `עוגת התפוזים של סבתא אידה`,
-    slug: 'ivgt-htfvzim-shl-svta-aidh',
+    slug: 'grandma-idas-orange-cake',
     description: `כשאידה נתנה לי את המתכון, גיליתי שזאת עוגה של קרין גורן, מה שמסביר את כמות הסוכר הגבוהה. אני מפחיתה..
 והעיקר, עוגה פרווה שכולם אוהבים.`,
     type: `עוגות ועוגיות`,
@@ -3099,7 +3099,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '277cbe71-c588-4bfe-b0da-98b5af1b0d46',
     title: `אורז מלא עם ירקות שורש בתנור`,
-    slug: 'avrz-mla-im-irkvt-shvrsh-vtnvr',
+    slug: 'whole-grain-rice-with-root-vegetables',
     description: `מתכון שהגיע מדוד אלון.
 אהוב על שחר`,
     type: `תוספות`,
@@ -3141,7 +3141,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'ab9469e8-95dd-498c-b9f5-cd82d696f019',
     title: `רוטב הבית למנגל`,
-    slug: 'rvtv-hvit-lmngl',
+    slug: 'house-bbq-sauce',
     description: null,
     type: `רטבים`,
     difficulty: 'Easy',
@@ -3172,7 +3172,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '3fdfda38-7d24-42a6-97d5-f2b6363f7632',
     title: `קיש פטריות עם בצק פטנט`,
-    slug: 'kish-ftrivt-im-vtsk-ftnt',
+    slug: 'mushroom-quiche',
     description: null,
     type: `אפייה מלוחה`,
     difficulty: 'Easy',
@@ -3231,8 +3231,8 @@ export const RECIPES: RecipeEntry[] = [
   },
   {
     id: '85db5bf3-ba75-4736-978b-3f219f99f07a',
-    title: `מרק אדום לקוסקוס `,
-    slug: 'mrk-advm-lkvskvs',
+    title: `מרק אדום לקוסקוס`,
+    slug: 'red-soup-for-couscous',
     description: `לשחר ולי יש קבוצת ווטסאפ משותפת של מתכונים.
 המתכון הזה ממנה עם קצת שינויים שלי.
 מי שרוצה יכול להוסיף לתבשיל גם שוקיים.
@@ -3285,7 +3285,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'bfd3f9a0-7472-4895-9087-c4926f7aa5e5',
     title: `בצל ממולא בשר`,
-    slug: 'vtsl-mmvla-vshr',
+    slug: 'stuffed-onion-with-meat',
     description: `המתכון האהוב של אלון, במקור של אהרוני`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -3338,7 +3338,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'a68329a3-9707-4a40-befb-71ca0c8a98b9',
     title: `פרגיות בחלב קוקוס`,
-    slug: 'frgivt-vhlv-kvkvs',
+    slug: 'chicken-thighs-in-coconut-milk',
     description: `המתכון של אלון...`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -3384,7 +3384,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '02f3b3e5-548d-4aca-9ee7-5f20cef6dfcf',
     title: `עוף ותפו"א בנוסח הודי`,
-    slug: 'ivf-vtfv-a-vnvsh-hvdi',
+    slug: 'indian-style-chicken-and-potato',
     description: null,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -3426,7 +3426,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: 'a379bf3e-308d-41d1-8364-bf8198aab2cf',
     title: `תפו"א ודלעת בנוסח הודי`,
-    slug: 'tfv-a-vdlit-vnvsh-hvdi',
+    slug: 'indian-style-potato-and-pumpkin',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
@@ -3463,7 +3463,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '676042e3-d098-4ca4-a71e-a23cd81cec13',
     title: `עוף, אורז , גזר וצנוברים`,
-    slug: 'ivf-avrz-gzr-vtsnvvrim',
+    slug: 'chicken-rice-carrot-and-pine-nuts',
     description: `העוף שעמית אוהבת, בהשראת מתכון של שרונה, בניחוחות הודו..`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -3493,7 +3493,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '86dedbac-a3c3-43fb-976e-b46c45ba899e',
     title: `בין גולש לחמין`,
-    slug: 'vin-gvlsh-lhmin',
+    slug: 'between-goulash-and-hamin',
     description: `קרוטית`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -3533,7 +3533,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '4fdb33d8-9918-4f92-9f23-33398f1ae3da',
     title: `החמין של שמריז`,
-    slug: 'hhmin-shl-shmriz',
+    slug: 'shamriz-hamin',
     description: `לזכרו של אלון שמריז`,
     type: `עיקריות`,
     difficulty: 'Easy',
@@ -3573,7 +3573,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '921de8bf-c8f5-442a-a876-a15fd5c17fad',
     title: `עוגת אגוזי לוז עם קרם קפה`,
-    slug: 'ivgt-agvzi-lvz-im-krm-kfh',
+    slug: 'hazelnut-cake-with-coffee-cream',
     description: `את העוגה הזאת, אפשר להכין כל השנה. אנחנו מכינים אותה בעיקר בפסח. אהובה במיוחד על שחר.`,
     type: `עוגות ועוגיות`,
     difficulty: 'Easy',
@@ -3609,7 +3609,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '6986c779-2a1f-4eca-8b98-8ccdca90843b',
     title: `עוגת חמאה ואגסים חמה`,
-    slug: 'ivgt-hmah-vagsim-hmh',
+    slug: 'warm-butter-and-pear-cake',
     description: `מתכון  שנירה רוסו פרסמה בעיתון הארץ לפני שנים רבות`,
     type: `עוגות ועוגיות`,
     difficulty: 'Easy',
@@ -3639,7 +3639,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0b187d62-2c79-4d05-abcf-5107be227e35',
     title: `עוגת תפו"ע`,
-    slug: 'ivgt-tfv-i',
+    slug: 'apple-cake',
     description: `עוגת הבית לראש השנה. מתאימה גם לפסח עם קמח כשל"פ. מתכון של רות גילעב - חברה של סבתא תרי . המתכון המקורי עם תפוח אדום, אני בד"כ מכינה עם גראנד סמית.`,
     type: `עוגות ועוגיות`,
     difficulty: 'Easy',
@@ -3673,7 +3673,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '0a3a6eb0-f672-47dd-80a8-b20fd6475860',
     title: `פשטידת אטריות מתוקה`,
-    slug: 'fshtidt-atrivt-mtvkh',
+    slug: 'sweet-noodle-kugel',
     description: `inka's nudelspise
 מתכון של חברה של תרי מהקמפינג קלאב. אהוב ע"י דור.`,
     type: `שונות`,
@@ -3707,7 +3707,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '743badec-2322-466f-bffb-3418a777d1f2',
     title: `Malai 2nd recepie`,
-    slug: 'malai-2nd-recepie',
+    slug: 'malai',
     description: `פשטידה מתוקה מהמטבח הרומני. המתכון הזה הוא ווריאציה על המתכון המקורי ונע בין פשטידה לעוגה. אצלינו בבית ההורים נאכל כמנה עיקרית בארוחת ערב ("בשרית"). קל להכנה.`,
     type: `שונות`,
     difficulty: 'Easy',
@@ -3742,7 +3742,7 @@ export const RECIPES: RecipeEntry[] = [
   {
     id: '3cff89d8-9304-4912-8de9-1753e80cdbc7',
     title: `אורז צהוב שילדים אוהבים`,
-    slug: 'avrz-tshvv-shildim-avhvim',
+    slug: 'yellow-rice-kids-love',
     description: null,
     type: `תוספות`,
     difficulty: 'Easy',
