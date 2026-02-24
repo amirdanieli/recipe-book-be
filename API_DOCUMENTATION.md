@@ -2,6 +2,10 @@
 
 This document lists every HTTP endpoint exposed by the backend, the expected request and response shapes, authentication and app configuration details useful for the front-end.
 
+## Project Overview
+- **Backend tech**: NestJS
+- **Backend entry file name**: `main.ts`
+
 Base URL
 - Default (development): `http://localhost:3000`
 
@@ -175,4 +179,4 @@ If you want, I can:
 - Generate an OpenAPI (Swagger) spec from the NestJS app.
 
 ---
-Generated on 2026-01-20.
+Generated on 2026-02-24.
