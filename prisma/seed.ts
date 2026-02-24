@@ -15,12 +15,6 @@ if (!connectionString) {
 const adapter = new PrismaPg({ connectionString });
 const prisma = new PrismaClient({ adapter, log: ['info', 'warn', 'error'] });
 
-interface Ingredient {
-  name: string;
-  quantity: number | string | null;
-  unit: string | null;
-}
-
 const HEBREW_TO_LATIN: [RegExp, string][] = [
   [/א/g, 'a'],
   [/ב/g, 'v'],
@@ -55,74 +49,6 @@ function toSlug(hebrew: string): string {
     .replace(/[^a-z0-9]+/gi, '-')
     .replace(/^-+|-+$/g, '')
     .toLowerCase();
-}
-
-function parseIngredients(raw: string): Ingredient[] {
-  const UNIT_MAP: [RegExp, string][] = [
-    [/ק"ג|קילו/, 'kg'],
-    [/גרם|גר'|גרום|גר/, 'gram'],
-    [/מ"ל|מיליליטר/, 'ml'],
-    [/ליטר/, 'liter'],
-    [/כוסות|כוס/, 'cup'],
-    [/כפות|כף/, 'tbsp'],
-    [/כפיות|כפית/, 'tsp'],
-    [/ראש/, 'head'],
-    [/צרורות|צרור/, 'bunch'],
-    [/חבילת|חבילה/, 'package'],
-    [/קופסת|קופסא/, 'can'],
-    [/שיני|שן/, 'clove'],
-    [/ענפי|ענף/, 'sprig'],
-    [/חופן/, 'handful'],
-    [/קורט/, 'pinch'],
-  ];
-
-  const lines = raw.split(/\r\n|\n/);
-  const result: Ingredient[] = [];
-
-  for (const rawLine of lines) {
-    // Skip section header lines that contain HTML tags (e.g. <strong>לסלט</strong>)
-    if (/<[^>]+>/.test(rawLine)) continue;
-    const stripped = rawLine.trim();
-    if (!stripped) continue;
-
-    let remaining = stripped;
-
-    // Extract leading quantity (integer, decimal, fraction, or range like 8-9)
-    let quantity: number | string | null = null;
-    const quantityMatch = remaining.match(
-      /^(\d+(?:[.,]\d+)?(?:\/\d+)?(?:-\d+)?)\s*/,
-    );
-    if (quantityMatch) {
-      const rawQty = quantityMatch[1];
-      remaining = remaining.slice(quantityMatch[0].length);
-      if (/\//.test(rawQty)) {
-        quantity = rawQty; // fraction string like "1/2"
-      } else if (/-/.test(rawQty)) {
-        quantity = rawQty; // range string like "8-9"
-      } else {
-        quantity = parseFloat(rawQty.replace(',', '.'));
-      }
-    }
-
-    // Extract unit
-    let unit: string | null = null;
-    for (const [pattern, unitValue] of UNIT_MAP) {
-      const unitRegex = new RegExp(`^(${pattern.source})\\s*`);
-      const match = remaining.match(unitRegex);
-      if (match) {
-        unit = unitValue;
-        remaining = remaining.slice(match[0].length);
-        break;
-      }
-    }
-
-    const name = remaining.trim();
-    if (!name) continue;
-
-    result.push({ name, quantity, unit });
-  }
-
-  return result;
 }
 
 const CATEGORY_DATA: { name: string; slug: string }[] = [
@@ -211,12 +137,6 @@ async function main() {
     const baseSlug = toSlug(entry.name);
     const slug = uniqueSlug(baseSlug);
 
-    const steps = entry.instructions
-      .split(/\r\n|\n/)
-      .map((s) => s.trim())
-      .filter((s) => s.length > 0);
-
-    const ingredients = parseIngredients(entry.ingredients);
     const story = entry.story && entry.story.trim() ? entry.story.trim() : null;
 
     const created = await prisma.recipe.create({
@@ -230,8 +150,8 @@ async function main() {
         prepTimeMinutes: 20,
         cookTimeMinutes: getCookTime(entry.type),
         servings: getServings(entry.type),
-        ingredients,
-        steps,
+        ingredients: entry.ingredients,
+        steps: entry.steps,
         imageUrl: null,
         createdById: admin.id,
       },
