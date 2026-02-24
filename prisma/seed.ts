@@ -2,6 +2,7 @@ import { PrismaClient, Role, Difficulty } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import * as bcrypt from 'bcrypt';
 import * as dotenv from 'dotenv';
+import { RECIPES, RecipeEntry } from './data/recipes';
 
 dotenv.config();
 
@@ -14,6 +15,19 @@ if (!connectionString) {
 const adapter = new PrismaPg({ connectionString });
 const prisma = new PrismaClient({ adapter, log: ['info', 'warn', 'error'] });
 
+const CATEGORY_DATA: { name: string; slug: string }[] = [
+  { name: 'מרקים', slug: 'marakim' },
+  { name: 'סלטים', slug: 'salatim' },
+  { name: 'ירקות', slug: 'yerakot' },
+  { name: 'תוספות', slug: 'tosafot' },
+  { name: 'עיקריות', slug: 'ikkariyot' },
+  { name: 'עוגות ועוגיות', slug: 'ugot-ve-ugiyot' },
+  { name: 'אפייה מלוחה', slug: 'afiya-meluha' },
+  { name: 'קינוחים', slug: 'kinuhim' },
+  { name: 'רטבים', slug: 'retavim' },
+  { name: 'שונות', slug: 'shonot' },
+];
+
 async function main() {
   console.log('Seed started...');
   await prisma.$connect();
@@ -24,87 +38,58 @@ async function main() {
   await prisma.user.deleteMany();
 
   // 2. Create Admin User
-  const adminPassword = await bcrypt.hash('admin123', 10);
+  const adminPassword = await bcrypt.hash('Foodies1!', 10);
   const admin = await prisma.user.create({
     data: {
-      email: 'admin@recipes.com',
+      email: 'danielis@recipes.com',
       password: adminPassword,
-      name: 'Admin User',
+      name: 'Danieli',
       role: Role.ADMIN,
     },
   });
+  console.log(`Created admin user: ${admin.name} (${admin.email})`);
 
   // 3. Create Categories
-  const desserts = await prisma.category.create({
-    data: {
-      name: 'Desserts',
-      slug: 'desserts',
-    },
-  });
+  const categoryMap = new Map<string, string>(); // Hebrew name -> id
+  for (const cat of CATEGORY_DATA) {
+    const created = await prisma.category.create({ data: cat });
+    categoryMap.set(cat.name, created.id);
+    console.log(`Created category: ${cat.name} (${cat.slug})`);
+  }
 
-  const mainCourse = await prisma.category.create({
-    data: {
-      name: 'Main Course',
-      slug: 'main-course',
-    },
-  });
+  // 4. Load recipe data
+  const recipes: RecipeEntry[] = RECIPES;
 
-  // 4. Create Recipes
-  await prisma.recipe.create({
-    data: {
-      title: 'Chocolate Lava Cake',
-      slug: 'chocolate-lava-cake',
-      description: 'A delicious chocolate cake with a molten center.',
-      categoryId: desserts.id,
-      difficulty: Difficulty.Medium,
-      prepTimeMinutes: 15,
-      cookTimeMinutes: 12,
-      servings: 2,
-      story:
-        'This recipe was passed down from my grandmother who loved baking for the holidays.',
-      ingredients: [
-        { name: 'Dark Chocolate', quantity: 100, unit: 'g' },
-        { name: 'Butter', quantity: 50, unit: 'g' },
-        { name: 'Eggs', quantity: 2, unit: 'pcs' },
-        { name: 'Sugar', quantity: 50, unit: 'g' },
-        { name: 'Flour', quantity: 20, unit: 'g' },
-      ],
-      steps: [
-        'Melt chocolate and butter together.',
-        'Whisk eggs and sugar until pale.',
-        'Fold in melted chocolate mixture.',
-        'Sift in flour and fold gently.',
-        'Bake at 200°C for 12 minutes.',
-      ],
-      createdById: admin.id,
-    },
-  });
+  // 5. Create Recipes
+  for (const entry of recipes) {
+    const categoryId = categoryMap.get(entry.type);
+    if (!categoryId) {
+      console.warn(
+        `Unknown category type: ${entry.type}, skipping recipe: ${entry.title}`,
+      );
+      continue;
+    }
 
-  await prisma.recipe.create({
-    data: {
-      title: 'Classic Beef Burger',
-      slug: 'classic-beef-burger',
-      description: 'Juicy beef patty with fresh lettuce and tomato.',
-      categoryId: mainCourse.id,
-      difficulty: Difficulty.Easy,
-      prepTimeMinutes: 10,
-      cookTimeMinutes: 10,
-      servings: 1,
-      ingredients: [
-        { name: 'Ground Beef', quantity: 150, unit: 'g' },
-        { name: 'Burger Bun', quantity: 1, unit: 'pc' },
-        { name: 'Lettuce', quantity: 2, unit: 'leaves' },
-        { name: 'Tomato', quantity: 2, unit: 'slices' },
-      ],
-      steps: [
-        'Shape beef into a patty.',
-        'Grill patty for 5 minutes per side.',
-        'Toast the buns.',
-        'Assemble the burger.',
-      ],
-      createdById: admin.id,
-    },
-  });
+    const created = await prisma.recipe.create({
+      data: {
+        title: entry.title,
+        slug: entry.slug,
+        description: entry.description,
+        story: entry.story,
+        categoryId,
+        difficulty: entry.difficulty as Difficulty,
+        prepTimeMinutes: entry.prepTimeMinutes,
+        prepTimeNote: entry.prepTimeNote,
+        cookTimeMinutes: entry.cookTimeMinutes,
+        servings: entry.servings,
+        ingredients: entry.ingredients,
+        steps: entry.steps,
+        imageUrl: entry.imageUrl,
+        createdById: admin.id,
+      },
+    });
+    console.log(`Created recipe: ${created.title} (${created.slug})`);
+  }
 
   console.log('Seed completed successfully.');
 }
