@@ -11,6 +11,6 @@ module.exports = defineConfig({
   },
   datasource: {
     provider: 'postgresql',
-    url: env('DATABASE_URL'),
+    url: process.env.DATABASE_URL || env('DATABASE_URL'),
   },
 });
