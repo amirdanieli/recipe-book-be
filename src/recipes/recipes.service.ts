@@ -113,11 +113,15 @@ export class RecipesService {
   ): Promise<Recipe> {
     const existing = await this.findOne(slug);
 
-    const { ingredients, ...rest } = updateRecipeDto;
+    const { ingredients, categoryId, ...rest } = updateRecipeDto;
     const data: Prisma.RecipeUpdateInput = { ...rest };
 
     if (updateRecipeDto.title && updateRecipeDto.title !== existing.title) {
       data.slug = this.generateSlug(updateRecipeDto.title);
+    }
+
+    if (categoryId) {
+      data.category = { connect: { id: categoryId } };
     }
 
     if (ingredients) {
