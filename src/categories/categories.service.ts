@@ -4,6 +4,9 @@ import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { Category, Prisma } from '@prisma/client';
 
+/** Category as returned by GET /categories, with its number of recipes. */
+export type CategoryWithCount = Category & { count: number };
+
 @Injectable()
 export class CategoriesService {
   constructor(private prisma: PrismaService) {}
@@ -27,10 +30,16 @@ export class CategoriesService {
     });
   }
 
-  findAll(): Promise<Category[]> {
-    return this.prisma.category.findMany({
+  async findAll(): Promise<CategoryWithCount[]> {
+    const categories = await this.prisma.category.findMany({
       orderBy: { name: 'asc' },
+      include: { _count: { select: { recipes: true } } },
     });
+
+    return categories.map(({ _count, ...category }) => ({
+      ...category,
+      count: _count.recipes,
+    }));
   }
 
   async findOne(idOrSlug: string): Promise<Category> {
